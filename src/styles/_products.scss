@@ -4,31 +4,14 @@
     padding: 250px 0 0px 0;
   }
 
-  // Ensure consistent main padding across all screen sizes
-  @media (max-width: 1024px) {
-    main {
-      padding: 250px 0 0px 0;
-    }
-  }
-
-  @media (max-width: 768px) {
-    main {
-      padding: 250px 0 0px 0;
-    }
-  }
-
-  @media (max-width: 480px) {
-    main {
-      padding: 250px 0 0px 0;
-    }
-  }
-
   main .container {
     margin-top: 100px;
+    margin-left: 115px; /* Match header left margin */
+    margin-right: 115px; /* Match header right margin */
     padding: 0;
-    margin-right: 115px;
   }
 
+  // Hero Section
   .hero-section {
     text-align: center;
     margin-bottom: 0px;
@@ -45,31 +28,6 @@
     background: linear-gradient(90deg, rgba(224, 231, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, rgba(0, 126, 164, 0.25) 0%, rgba(255, 255, 255, 1) 100%);
     z-index: 1;
     padding-top: 125px;
-  }
-
-  // Ensure consistent hero positioning across all screen sizes
-  @media (max-width: 1024px) {
-    .hero-section {
-      top: 70px !important;
-      height: 270px !important;
-      padding-top: 125px !important;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .hero-section {
-      top: 70px !important;
-      height: 270px !important;
-      padding-top: 125px !important;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .hero-section {
-      top: 70px !important;
-      height: 270px !important;
-      padding-top: 125px !important;
-    }
   }
 
   .hero-content {
@@ -98,9 +56,9 @@
     color: #1a1a1a;
     margin-bottom: 60px;
     line-height: 1.0;
-    max-width: 80%; /* Limit width to 80% of container */
-    word-wrap: break-word; /* Allow words to break and wrap */
-    overflow-wrap: break-word; /* Modern CSS for word wrapping */
+    max-width: 80%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     font-family: 'Inter', sans-serif;
     text-align: left;
     margin-top: 0px;
@@ -110,7 +68,7 @@
     color: #007EA4;
   }
 
-  // Products Page Specific Styles
+  // Materials Section
   .materials-section {
     margin-bottom: 80px;
     margin-left: 0;
@@ -164,6 +122,7 @@
     max-height: 300px;
   }
 
+  // Forms Section
   .forms-section {
     margin-bottom: 100px;
     text-align: center;
@@ -236,6 +195,7 @@
     transform: translateX(4px);
   }
 
+  // Capabilities Section
   .capabilities-section {
     margin-bottom: 80px;
     text-align: center;
@@ -286,10 +246,10 @@
     white-space: nowrap;
   }
 
-  // Inquiries Section Styles
+  // Inquiries Section
   .inquiries-section {
     background: #f8f9fa;
-    padding: 120px 0;
+    padding: 120px 50px;
     margin-top: 80px;
   }
 
@@ -432,9 +392,50 @@
     left: 100%;
   }
 
+  // Responsive Styles
+  @media (max-width: 1024px) {
+    main .container {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1400px;
+      padding: 0 32px;
+    }
+
+    .hero-content {
+      margin: 100px 50px 0px 40px;
+      text-align: left;
+      width: 100%;
+    }
+
+    .hero-title {
+      max-width: 95%;
+      font-size: 2.3rem;
+    }
+  }
+
   @media (max-width: 768px) {
+    main .container {
+      padding: 0 24px;
+    }
+
     .materials-content {
       flex-direction: column;
+    }
+
+    .materials-text {
+      text-align: center;
+    }
+
+    .materials-text h2 {
+      text-align: center;
+    }
+
+    .materials-image {
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: 100%;
+      flex: none;
     }
 
     .forms-grid {
@@ -451,40 +452,20 @@
     }
 
     .hero-title {
-      max-width: 100%; /* Full width on mobile for better readability */
-      font-size: 2.5rem; /* Slightly smaller font on mobile */
+      max-width: 90%;
+      font-size: 2.3rem;
     }
   }
 
-  // Override responsive margin reductions for products page
-  @media (max-width: 1400px) {
-    main .container {
-      margin-left: 115px !important;
-      margin-right: 115px !important;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    main .container {
-      margin-left: 115px !important;
-      margin-right: 115px !important;
-      padding: 0;
-    }
-  }
-
-  @media (max-width: 768px) {
-    main .container {
-      margin-left: 115px !important;
-      margin-right: 115px !important;
-      padding: 0;
+  @media (max-width: 500px) {
+    .hero-content {
+      margin-top: 75px;
     }
   }
 
   @media (max-width: 480px) {
     main .container {
-      margin-left: 115px !important;
-      margin-right: 115px !important;
-      padding: 0;
+      padding: 0 16px;
     }
   }
 }

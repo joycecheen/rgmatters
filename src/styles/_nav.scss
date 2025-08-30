@@ -126,10 +126,16 @@
     transition: right 0.3s ease-in-out;
     box-shadow: -2px 0 10px rgba(0,0,0,0.1);
     gap: 0;
+    z-index: 1001; /* Ensure it's above the nav */
   }
   
   .nav__links.active {
     right: 0;
+  }
+  
+  /* Prevent horizontal scrolling when menu is open */
+  body.nav-open {
+    overflow-x: hidden;
   }
   
   .nav__links li {
@@ -167,15 +173,15 @@
 
 @media (max-width: 768px) {
   .nav__bar {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 32px; /* Increased from 20px to 32px */
+    margin-right: 32px; /* Increased from 20px to 32px */
   }
 }
 
 @media (max-width: 480px) {
   .nav__bar {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 24px; /* Increased from 10px to 24px */
+    margin-right: 24px; /* Increased from 10px to 24px */
   }
   
   .nav__links {

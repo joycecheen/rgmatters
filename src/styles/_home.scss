@@ -11,7 +11,7 @@
     gap: 60px;
     max-width: none;
     margin: 0;
-    padding: 0px 0;
+    padding: 0px 40px; /* Added horizontal padding: 40px left and right */
     position: relative;
     overflow: hidden;
     min-height: 800px;
@@ -125,7 +125,7 @@
   // Responsive styles for homepage
   @media (max-width: 1024px) {
     main {
-      padding: 0px 0 0px 0;
+      padding: 0px 0 -0px 0;
     }
 
     .hero {
@@ -134,7 +134,7 @@
       text-align: center;
       align-items: center;
       justify-content: flex-start;
-      padding: 0px 0;
+      padding: 0px 32px; /* Added horizontal padding for tablet screens */
       position: relative;
       overflow: visible;
     }
@@ -152,7 +152,7 @@
       position: relative;
       right: auto;
       top: auto;
-      margin-top: -80px;
+      margin-top: -175px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -173,8 +173,18 @@
     }
 
     .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 40px;
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #1a1a1a;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.04em;
+      margin: -180px 20px 24px 20px;
+    }
+
+    .hero__subtitle {
+      font-size: 20px;
+      margin: 0 20px 60px 20px;
     }
 
     .hero__buttons {

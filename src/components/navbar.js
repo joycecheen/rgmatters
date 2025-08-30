@@ -40,6 +40,13 @@ export function initNavbar() {
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
       navToggle.classList.toggle('active');
+      
+      // Add/remove nav-open class to body to prevent horizontal scrolling
+      if (navLinks.classList.contains('active')) {
+        document.body.classList.add('nav-open');
+      } else {
+        document.body.classList.remove('nav-open');
+      }
     });
     
     // Close mobile menu when clicking on a link
@@ -48,7 +55,17 @@ export function initNavbar() {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
         navToggle.classList.remove('active');
+        document.body.classList.remove('nav-open');
       });
+    });
+    
+    // Close mobile menu when clicking outside of it
+    document.addEventListener('click', (e) => {
+      if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('active');
+        navToggle.classList.remove('active');
+        document.body.classList.remove('nav-open');
+      }
     });
   }
 }

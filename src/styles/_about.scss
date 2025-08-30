@@ -47,31 +47,6 @@
     padding-top: 125px;
   }
 
-  // Ensure consistent hero positioning across all screen sizes
-  @media (max-width: 1024px) {
-    .hero-section {
-      top: 70px !important;
-      height: 270px !important;
-      padding-top: 125px !important;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .hero-section {
-      top: 70px !important;
-      height: 270px !important;
-      padding-top: 125px !important;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .hero-section {
-      top: 70px !important;
-      height: 270px !important;
-      padding-top: 125px !important;
-    }
-  }
-
   .hero-content {
     margin-left: 115px;
     margin-right: 115px;
@@ -83,7 +58,7 @@
   .hero-header {
     text-align: left;
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     color: #1a1a1a;
     margin-bottom: 16px;
@@ -97,10 +72,10 @@
     font-weight: 700;
     color: #1a1a1a;
     margin-bottom: 60px;
-    line-height: 1.2;
-    max-width: 80%; /* Limit width to 80% of container */
-    word-wrap: break-word; /* Allow words to break and wrap */
-    overflow-wrap: break-word; /* Modern CSS for word wrapping */
+    line-height: 1.0;
+    max-width: 80%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     font-family: 'Inter', sans-serif;
     text-align: left;
     margin-top: 0px;
@@ -207,8 +182,15 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .leadership-grid {
+      grid-template-columns: 1fr;
+      max-width: 600px;
+    }
   }
 
   .leader-card {
@@ -286,50 +268,31 @@
     height: 16px;
   }
 
-  @media (max-width: 768px) {
-    .mission-vision-grid {
-      grid-template-columns: 1fr;
+  @media (max-width: 1024px) {
+    main .container {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1400px;
+      padding: 0 32px;
     }
 
-    .leadership-grid {
-      grid-template-columns: 1fr;
+    .hero-content {
+      margin: 100px 50px 0px 40px;
+      text-align: left;
+      width: 100%;
     }
 
     .hero-title {
-      max-width: 100%; /* Full width on mobile for better readability */
-      font-size: 2.5rem; /* Slightly smaller font on mobile */
+      max-width: 95%;
+      font-size: 2.3rem;
     }
   }
 
-  // Override responsive margin reductions for about page
-  @media (max-width: 1400px) {
-    main .container {
-      margin-left: 115px !important;
-      margin-right: 115px !important;
+  @media (max-width: 500px) {
+    .vision-image,
+    .mission-image {
+      display: none;
     }
   }
-
-  @media (max-width: 1024px) {
-    main .container {
-      margin-left: 115px !important;
-      margin-right: 115px !important;
-      padding: 0;
-    }
-  }
-
-  @media (max-width: 768px) {
-    main .container {
-      margin-left: 115px !important;
-      margin-right: 115px !important;
-      padding: 0;
-    }
-  }
-
-  @media (max-width: 480px) {
-    main .container {
-      margin-left: 115px !important;
-      margin-right: 115px !important;
-      padding: 0;
-    }
-  }
+  
 }

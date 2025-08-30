@@ -72,6 +72,21 @@
     }
   }
 
+  // Responsive hero title scaling
+  @media (max-width: 1024px) {
+    .hero-title {
+      max-width: 95%;
+      font-size: 2.3rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      max-width: 90%;
+      font-size: 2.3rem;
+    }
+  }
+
   .hero-content {
     margin-left: 115px;
     margin-right: 115px;
@@ -97,12 +112,13 @@
     font-weight: 700;
     color: #1a1a1a;
     margin-bottom: 60px;
-    line-height: 1.2;
-    max-width: 80%; /* Limit width to 80% of container */
-    word-wrap: break-word; /* Allow words to break and wrap */
-    overflow-wrap: break-word; /* Modern CSS for word wrapping */
+    line-height: 1.0;
+    max-width: 85%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     font-family: 'Inter', sans-serif;
     text-align: left;
+    margin-top: 0px;
     margin-top: 0px;
   }
 
@@ -256,7 +272,7 @@
   // Inquiries Section Styles
   .inquiries-section {
     background: #f8f9fa;
-    padding: 120px 0;
+    padding: 120px 50px;
     margin-top: 80px;
   }
 
@@ -415,34 +431,29 @@
   }
 
   // Override responsive margin reductions for contact page
-  @media (max-width: 1400px) {
-    main .container {
-      margin-left: 115px !important;
-      margin-right: 115px !important;
-    }
-  }
-
   @media (max-width: 1024px) {
     main .container {
-      margin-left: 115px !important;
-      margin-right: 115px !important;
-      padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1400px;
+      padding: 0 32px;
+    }
+
+    .hero-content {
+      margin: 100px 50px 0px 40px;
+      text-align: left;
+      width: 100%;
+    }
+
+    .hero-title {
+      max-width: 93%;
+      font-size: 2.3rem;
     }
   }
 
-  @media (max-width: 768px) {
-    main .container {
-      margin-left: 115px !important;
-      margin-right: 115px !important;
-      padding: 0;
-    }
-  }
-
-  @media (max-width: 480px) {
-    main .container {
-      margin-left: 115px !important;
-      margin-right: 115px !important;
-      padding: 0;
+  @media (max-width: 500px) {
+    .hero-content {
+      margin-top: 75px;
     }
   }
 }

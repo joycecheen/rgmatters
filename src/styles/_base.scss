@@ -3,6 +3,14 @@ html,body{height:100%}
 body{
   margin:0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   background: var(--bg); color: var(--ink);
+  overflow-x: hidden; /* Prevent horizontal scrolling globally */
+}
+
+/* Ensure no horizontal scrolling when mobile menu is open */
+body.nav-open {
+  overflow-x: hidden;
+  position: fixed;
+  width: 100%;
 }
 .container{
   margin-left: 115px; /* Exactly 115px from left edge */
@@ -21,13 +29,14 @@ body{
 @media (max-width: 1024px) {
   .container {
     margin-left: 40px; /* 40px from left edge */
-    padding: 20px;
+    padding: 0px;
   }
 }
 
 @media (max-width: 768px) {
   .container {
     margin-left: 20px; /* 20px from left edge */
+    margin-right: 20px; /* 20px from right edge */
     padding: 16px;
   }
 }
@@ -35,6 +44,7 @@ body{
 @media (max-width: 480px) {
   .container {
     margin-left: 10px; /* 10px from left edge */
+    margin-right: 10px; /* 10px from right edge */
     padding: 12px;
   }
 }
