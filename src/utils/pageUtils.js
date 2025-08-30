@@ -44,20 +44,35 @@ export function initializePage(currentPage = '') {
 }
 
 export function getCurrentPage() {
+  // For multi-page sites, determine the page based on the HTML file name
   const path = window.location.pathname;
+  const filename = path.split('/').pop();
   
-  // Remove base path if present
-  const cleanPath = path.replace('/rgmatters', '');
+  // Debug logging
+  console.log('Path:', path);
+  console.log('Filename:', filename);
   
-  if (cleanPath === '/' || cleanPath === '/index.html' || cleanPath === '') {
+  // Check the filename to determine the page
+  if (filename === '' || filename === 'index.html' || path.endsWith('/')) {
     return 'home';
-  } else if (cleanPath.includes('contact')) {
+  } else if (filename === 'contact.html') {
     return 'contact';
-  } else if (cleanPath.includes('technology')) {
+  } else if (filename === 'technology.html') {
+    return 'technology';
+  } else if (filename === 'products.html') {
+    return 'products';
+  } else if (filename === 'about.html') {
+    return 'about';
+  }
+  
+  // Fallback: check if the path contains any of our page names
+  if (path.includes('contact')) {
+    return 'contact';
+  } else if (path.includes('technology')) {
     return 'technology';
   } else if (path.includes('products')) {
     return 'products';
-  } else if (cleanPath.includes('about')) {
+  } else if (path.includes('about')) {
     return 'about';
   }
   

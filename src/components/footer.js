@@ -1,5 +1,8 @@
 // Footer Component
 export function createFooter() {
+  // Get the base path for GitHub Pages deployment
+  const basePath = window.location.hostname.includes('github.io') ? '/rgmatters/' : '';
+  
   const footerHTML = `
     <footer class="footer">
       <div class="container">
@@ -19,11 +22,11 @@ export function createFooter() {
           <div class="footer__column">
             <h3 class="footer__title">Quick Links</h3>
             <ul class="footer__links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="technology.html">Our Technology</a></li>
-              <li><a href="products.html">Our Products</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="${basePath}index.html">Home</a></li>
+              <li><a href="${basePath}technology.html">Our Technology</a></li>
+              <li><a href="${basePath}products.html">Our Products</a></li>
+              <li><a href="${basePath}about.html">About Us</a></li>
+              <li><a href="${basePath}contact.html">Contact</a></li>
             </ul>
           </div>
 

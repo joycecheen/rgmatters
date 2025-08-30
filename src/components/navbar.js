@@ -1,10 +1,13 @@
 // Navbar Component
 export function createNavbar(currentPage = '') {
+  // Get the base path for GitHub Pages deployment
+  const basePath = window.location.hostname.includes('github.io') ? '/rgmatters/' : '';
+  
   const navbarHTML = `
     <nav class="nav">
       <div class="container nav__bar">
         <div class="logo">
-          <a href="index.html">
+          <a href="${basePath}index.html">
             <div class="logo__icon"></div>
           </a>
         </div>
@@ -14,11 +17,11 @@ export function createNavbar(currentPage = '') {
           <span></span>
         </button>
         <ul class="nav__links">
-          <li><a href="index.html" ${currentPage === 'home' ? 'class="is-active"' : ''}>Home</a></li>
-          <li><a href="technology.html" ${currentPage === 'technology' ? 'class="is-active"' : ''}>Our Technology</a></li>
-          <li><a href="products.html" ${currentPage === 'products' ? 'class="is-active"' : ''}>Our Products</a></li>
-          <li><a href="about.html" ${currentPage === 'about' ? 'class="is-active"' : ''}>About Us</a></li>
-          <li><a class="btn" href="contact.html" ${currentPage === 'contact' ? 'class="btn is-active"' : ''}>Contact Us</a></li>
+          <li><a href="${basePath}index.html" ${currentPage === 'home' ? 'class="is-active"' : ''}>Home</a></li>
+          <li><a href="${basePath}technology.html" ${currentPage === 'technology' ? 'class="is-active"' : ''}>Our Technology</a></li>
+          <li><a href="${basePath}products.html" ${currentPage === 'products' ? 'class="is-active"' : ''}>Our Products</a></li>
+          <li><a href="${basePath}about.html" ${currentPage === 'about' ? 'class="is-active"' : ''}>About Us</a></li>
+          <li><a class="btn" href="${basePath}contact.html" ${currentPage === 'contact' ? 'class="btn is-active"' : ''}>Contact Us</a></li>
         </ul>
       </div>
     </nav>
