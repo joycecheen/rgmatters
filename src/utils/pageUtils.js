@@ -46,15 +46,18 @@ export function initializePage(currentPage = '') {
 export function getCurrentPage() {
   const path = window.location.pathname;
   
-  if (path === '/' || path === '/index.html') {
+  // Remove base path if present
+  const cleanPath = path.replace('/rgmatters', '');
+  
+  if (cleanPath === '/' || cleanPath === '/index.html' || cleanPath === '') {
     return 'home';
-  } else if (path.includes('contact')) {
+  } else if (cleanPath.includes('contact')) {
     return 'contact';
-  } else if (path.includes('technology')) {
+  } else if (cleanPath.includes('technology')) {
     return 'technology';
   } else if (path.includes('products')) {
     return 'products';
-  } else if (path.includes('about')) {
+  } else if (cleanPath.includes('about')) {
     return 'about';
   }
   
