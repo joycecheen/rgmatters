@@ -1,0 +1,58 @@
+// Critical CSS to prevent FOUC (Flash of Unstyled Content)
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+.container {
+  margin-left: 115px;
+  margin-right: 0;
+  padding: 24px;
+  max-width: none;
+}
+
+// Main padding is handled by page-specific CSS files
+// No global main padding to avoid conflicts with page-specific layouts
+
+// Basic responsive container adjustments
+@media (max-width: 1400px) {
+  .container {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    margin-left: 60px;
+    margin-right: 60px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 12px;
+  }
+}

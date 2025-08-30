@@ -1,0 +1,335 @@
+// About Page Specific Styles
+.about-page {
+  main {
+    padding: 220px 0 0px 0;
+  }
+
+  // Ensure consistent main padding across all screen sizes
+  @media (max-width: 1024px) {
+    main {
+      padding: 220px 0 0px 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    main {
+      padding: 220px 0 0px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    main {
+      padding: 220px 0 0px 0;
+    }
+  }
+
+  main .container {
+    margin-top: 100px;
+    padding: 0;
+    margin-right: 115px;
+  }
+
+  .hero-section {
+    text-align: center;
+    margin-bottom: 0px;
+    height: 270px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 0px;
+    background: #E0E7FF;
+    background: linear-gradient(90deg, rgba(224, 231, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, rgba(0, 126, 164, 0.25) 0%, rgba(255, 255, 255, 1) 100%);
+    z-index: 1;
+    padding-top: 125px;
+  }
+
+  // Ensure consistent hero positioning across all screen sizes
+  @media (max-width: 1024px) {
+    .hero-section {
+      top: 70px !important;
+      height: 270px !important;
+      padding-top: 125px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      top: 70px !important;
+      height: 270px !important;
+      padding-top: 125px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-section {
+      top: 70px !important;
+      height: 270px !important;
+      padding-top: 125px !important;
+    }
+  }
+
+  .hero-content {
+    margin-left: 115px;
+    margin-right: 115px;
+    margin-top: 100px;
+    text-align: left;
+    width: 100%;
+  }
+
+  .hero-header {
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: -150px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 60px;
+    line-height: 1.2;
+    max-width: 80%; /* Limit width to 80% of container */
+    word-wrap: break-word; /* Allow words to break and wrap */
+    overflow-wrap: break-word; /* Modern CSS for word wrapping */
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+    margin-top: 0px;
+  }
+
+  .highlight {
+    color: #007EA4;
+  }
+
+  // About Us Page Specific Styles
+  .intro-section {
+    margin-bottom: 80px;
+  }
+
+  .intro-text {
+    font-size: 18px;
+    color: #374151;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    max-width: 1800px;
+  }
+
+  .mission-vision-section {
+    margin-bottom: 80px;
+  }
+
+  .mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 60px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .mission-card,
+  .vision-card {
+    background: transparent;
+    padding: 0;
+  }
+
+  .mission-card h2,
+  .vision-card h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 0.4;
+    color: #333;
+    margin-top: 5px;
+    margin-bottom: 12px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .mission-card h3,
+  .vision-card h3 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #007EA4;
+    margin-bottom: 28px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .mission-card p,
+  .vision-card p {
+    color: #374151;
+    line-height: 1.5;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+  }
+
+  .mission-image,
+  .vision-image {
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .mission-image img,
+  .vision-image img {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 100%;
+    max-height: 300px;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .leadership-section {
+    margin-bottom: 80px;
+    text-align: center;
+  }
+
+  .leadership-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .leader-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 32px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    position: relative;
+  }
+
+  .leader-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .leader-card .title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #007EA4;
+    margin-bottom: 16px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .leader-card p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 20px;
+  }
+
+  .leader-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .leader-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #E3F2FD;
+    color: #1E40AF;
+    text-decoration: none;
+    padding: 4px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease;
+    border: none;;
+  }
+
+  .leader-button:hover {
+    background: #BBDEFB;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .leader-button.research-button {
+    background: #F5F5F5;
+    color: #333333;
+  }
+
+  .leader-button.research-button:hover {
+    background: #EEEEEE;
+  }
+
+  .leader-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .mission-vision-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .leadership-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+      max-width: 100%; /* Full width on mobile for better readability */
+      font-size: 2.5rem; /* Slightly smaller font on mobile */
+    }
+  }
+
+  // Override responsive margin reductions for about page
+  @media (max-width: 1400px) {
+    main .container {
+      margin-left: 115px !important;
+      margin-right: 115px !important;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    main .container {
+      margin-left: 115px !important;
+      margin-right: 115px !important;
+      padding: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    main .container {
+      margin-left: 115px !important;
+      margin-right: 115px !important;
+      padding: 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    main .container {
+      margin-left: 115px !important;
+      margin-right: 115px !important;
+      padding: 0;
+    }
+  }
+}
