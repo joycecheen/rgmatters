@@ -6,6 +6,11 @@ export function initWebGLAnimation() {
   const gl = canvas.getContext('webgl', { antialias: true, alpha: true, depth: true, stencil: false, premultipliedAlpha: true });
   if (!gl) { console.log('WebGL not supported'); return; }
 
+  // ---------- Animation state ----------
+  let isPaused = false;
+  let pauseTime = 0;
+  let totalPausedTime = 0;
+
   // ---------- Resize / DPR ----------
   function resize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -188,6 +193,18 @@ export function initWebGLAnimation() {
     e.preventDefault(); // Prevent any default behavior while dragging
   });
 
+  // Add click event listener for pause/resume
+  canvas.addEventListener('click', e => {
+    if (!isDown) { // Only toggle if not dragging
+      isPaused = !isPaused;
+      if (isPaused) {
+        pauseTime = performance.now();
+      } else {
+        totalPausedTime += performance.now() - pauseTime;
+      }
+    }
+  });
+
   // Only prevent scrolling when dragging the 3D model
   canvas.addEventListener('wheel', e => { 
     if (isDown) {
@@ -218,7 +235,9 @@ export function initWebGLAnimation() {
     const aspect = canvas.width / canvas.height;
     const proj = M4.perspective(50*Math.PI/180, aspect, 0.1, 100.0);
 
-    const auto = now * 0.0004 * Math.PI * 2;
+    // Calculate animation time accounting for paused time
+    const adjustedTime = isPaused ? pauseTime - totalPausedTime : now - totalPausedTime;
+    const auto = adjustedTime * 0.0004 * Math.PI * 2;
 
     const eye = [ Math.cos(rotY)*Math.cos(rotX)*dist, Math.sin(rotX)*dist, Math.sin(rotY)*Math.cos(rotX)*dist ];
     const view = M4.lookAt(eye, [0,0,0], [0,1,0]);
