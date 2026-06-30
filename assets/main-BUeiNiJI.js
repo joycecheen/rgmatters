@@ -63,10 +63,6 @@
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="#007EA4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   <circle cx="12" cy="10" r="3" stroke="#007EA4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <div class="footer__address">
-                  <span>1729 W. Paul Dirac Drive</span>
-                  <span>Tallahassee, FL 32303</span>
-                </div>
               </div>
             </div>
           </div>
