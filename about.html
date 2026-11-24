@@ -1,70 +1,152 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ROENTGEN MATTERS — About Us</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* Critical CSS to prevent FOUC */
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-    body{background:#ffffff;color:#1a1a1a}
-    .container{margin-left:115px;margin-right:0;padding:24px;max-width:none}
-  </style>
-  <script type="module" crossorigin src="/assets/main-BUeiNiJI.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-Bic82BDj.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <title>ROENTGEN MATTERS — About Us</title>
+    <script type="module" crossorigin src="/assets/main-DV0lXaMd.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-CzOJHehk.css">
+  </head>
+  <body>
+    <header class="site-header" data-header>
+  <div class="container site-header__inner">
+    <a class="site-header__logo" href="/">
+      <img src="/brand/logo-wordmark.png" alt="Roentgen Matters" width="832" height="234" />
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary" data-nav>
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="/" data-page="home">Home</a></li>
+        <li><a class="site-nav__link" href="/technology.html" data-page="technology">Our Technology</a></li>
+        <li><a class="site-nav__link" href="/products.html" data-page="products">Our Products</a></li>
+        <li><a class="site-nav__link" href="/about.html" data-page="about" aria-current="page">About Us</a></li>
+      </ul>
+      <a class="button button--primary button--small site-nav__cta" href="/contact.html" data-page="contact">
+        Contact Us
+      </a>
+    </nav>
+
+    <button
+      class="site-header__toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Toggle navigation menu"
+      data-nav-toggle
+    >
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
 
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <div class="hero-header">ABOUT US</div>
-        <h1 class="hero-title">Built by Experts. Protected by Patents. Driven by Innovation.</h1>
-      </div>
-    </section>
-
-    <div class="container">
-      <!-- Introduction Section -->
-      <section class="intro-section">
-        <p class="intro-text"><strong>Roentgen Matters</strong> is a deep-tech startup commercializing novel hybrid materials for next-generation radiation scintillation and detection. Building upon groundbreaking research in organic–inorganic hybrid scintillators and direct detectors, our technology provides a powerful new radiation solution for homeland security, nuclear industry, nuclear medicine, industrial non-destructive testing, medical imaging, and high energy physics applications.</p>
-      </section>
-
-      <!-- Mission & Vision Section -->
-      <section class="mission-vision-section">
-        <div class="mission-vision-grid">
-          <div class="vision-image">
-            <img src="/about1.png?v=2">
-          </div>
-          
-          <div class="vision-card">
-            <h2>Our Vision</h2>
-            <h3>Innovating Materials for a Safer, Smarter World</h3>
-            <p>Our vision is to provide innovative material solutions for the security/safety, intelligent digital era, advancing the Fourth Industrial Revolution, human health, and scientific discovery.</p>
-          </div>
-          
-          <div class="mission-card">
-            <h2>Our Mission</h2>
-            <h3>Innovating Materials for Radiation Scintillators and Detectors</h3>
-            <p>Our mission is to engineer novel hybrid materials for next-generation radiation scintillators and detectors, delivering high-performance, scalable solutions for homeland security, nuclear industry, nuclear medicine, industrial non-destructive testing, medical imaging, and high energy physics markets.</p>
-          </div>
-          
-          <div class="mission-image">
-            <img src="/about2.png?v=2">
-          </div>
+    <main id="main">
+      <section class="page-hero">
+        <div class="container page-hero__inner">
+          <p class="eyebrow">ABOUT US</p>
+          <h1 class="display page-hero__title about-hero__title">
+            <span>Built by Experts.</span> <span>Protected by Patents.</span>
+            <span>Driven by Innovation.</span>
+          </h1>
         </div>
       </section>
+
+      <!-- Introduction -->
+      <section class="band">
+        <div class="container">
+          <p class="statement about-intro" data-reveal>
+            <strong>Roentgen Matters</strong> is a deep-tech startup commercializing novel hybrid materials
+            for next-generation radiation scintillation and detection. Building upon groundbreaking research
+            in organic–inorganic hybrid scintillators and direct detectors, our technology provides a powerful
+            new radiation solution for homeland security, nuclear industry, nuclear medicine, industrial
+            non-destructive testing, medical imaging, and high energy physics applications.
+          </p>
+        </div>
+      </section>
+
+      <!-- Vision & Mission -->
+      <section class="band">
+        <div class="container story">
+          <article class="media-row">
+            <figure class="frame story__media" data-reveal>
+              <img src="/images/about-vision.webp" alt="" width="1280" height="699" loading="lazy" />
+            </figure>
+            <div class="story__body" data-reveal>
+              <h2 class="eyebrow">Our Vision</h2>
+              <h3 class="heading">Innovating Materials for a Safer, Smarter World</h3>
+              <p>
+                Our vision is to provide innovative material solutions for the security/safety, intelligent
+                digital era, advancing the Fourth Industrial Revolution, human health, and scientific
+                discovery.
+              </p>
+            </div>
+          </article>
+
+          <article class="media-row media-row--reverse">
+            <figure class="frame story__media" data-reveal>
+              <img src="/images/about-mission.webp" alt="" width="1280" height="699" loading="lazy" />
+            </figure>
+            <div class="story__body" data-reveal>
+              <h2 class="eyebrow">Our Mission</h2>
+              <h3 class="heading">Innovating Materials for Radiation Scintillators and Detectors</h3>
+              <p>
+                Our mission is to engineer novel hybrid materials for next-generation radiation scintillators
+                and detectors, delivering high-performance, scalable solutions for homeland security, nuclear
+                industry, nuclear medicine, industrial non-destructive testing, medical imaging, and high
+                energy physics markets.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a class="site-footer__logo" href="/">
+          <img
+            src="/brand/logo-wordmark-light.png"
+            alt="Roentgen Matters"
+            width="832"
+            height="233"
+            loading="lazy"
+          />
+        </a>
+        <p class="site-footer__tagline">
+          <span>Hybrid Materials for Radiation</span>
+          <span>Scintillation and Detection</span>
+        </p>
+      </div>
+
+      <nav aria-label="Footer">
+        <h2 class="site-footer__title">Quick Links</h2>
+        <ul class="site-footer__links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/technology.html">Our Technology</a></li>
+          <li><a href="/products.html">Our Products</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="site-footer__title">Contact Us</h2>
+        <a class="site-footer__contact" href="mailto:info@rgmatters.com">
+          <svg class="icon icon--mail" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>
+          <span>info@rgmatters.com</span>
+        </a>
+      </div>
     </div>
-  </main>
 
+    <p class="site-footer__legal">© 2025 Roentgen Matters LLC. All rights reserved.</p>
+  </div>
+</footer>
 
-
-</body>
+  </body>
 </html>
