@@ -2,10 +2,12 @@ import '@fontsource-variable/host-grotesk';
 import './styles/main.scss';
 
 import { initHeader } from './scripts/header.js';
+import { playHeroIntro } from './scripts/hero-intro.js';
 import { initReveal } from './scripts/reveal.js';
 
 initHeader();
 initReveal();
+playHeroIntro();
 
 // The hero visual only exists on the home page; load it on demand.
 const heroCanvas = document.querySelector('[data-hero-visual]');

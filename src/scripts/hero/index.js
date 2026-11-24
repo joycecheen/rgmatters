@@ -1,8 +1,9 @@
 // Home hero visual: the logo geometry in 3D.
 //
 // Renders the tetrahedron-in-a-cube from ./geometry.js on a 2D canvas. It
-// opens in the exact logo view, tumbles continuously, periodically settles back
-// into the logo, and emits faint scintillation flashes from inside the crystal.
+// draws itself on into the exact logo view (./intro.js), then tumbles
+// continuously, periodically settles back into the logo, and emits faint
+// scintillation flashes from inside the crystal.
 // Drag rotates; a mouse click pauses (touch never pauses it). Honors
 // prefers-reduced-motion (static view) and only animates while on screen.
 import * as quat from './quaternion.js';
@@ -16,6 +17,14 @@ import {
   nearestLogoOrientation,
   randomPointInTetra,
 } from './geometry.js';
+import {
+  INTRO,
+  INTRO_FROM,
+  buildSchedule,
+  easeOutExpo,
+  easeOutQuart,
+  revealSegment,
+} from './intro.js';
 
 const COLOR = {
   line: [0, 126, 164], // brand teal
@@ -50,8 +59,14 @@ export function initHeroVisual(canvas) {
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  let orientation = LOGO_ORIENTATION;
-  let phase = { name: 'hold', t: TIMING.hold - TIMING.firstHold };
+  // Load-in: progress 0 → 1 (skipped entirely under reduced motion)
+  const schedule = buildSchedule();
+  let intro = reduceMotion ? 1 : 0;
+  let introClock = 0;
+  let scale = 1;
+
+  let orientation = reduceMotion ? LOGO_ORIENTATION : INTRO_FROM;
+  let phase = { name: 'intro', t: 0 };
   let align = null;
   let spinUp = 0;
   let inertia = [0, 0, 0];
@@ -76,7 +91,7 @@ export function initHeroVisual(canvas) {
 
   function project(v) {
     const focal = (CAMERA_DISTANCE * Math.min(width, height) * FIT) / Math.sqrt(3);
-    const k = focal / (CAMERA_DISTANCE - v[2]);
+    const k = (focal * scale) / (CAMERA_DISTANCE - v[2]);
     return [width / 2 + v[0] * k, height / 2 - v[1] * k];
   }
 
@@ -90,6 +105,12 @@ export function initHeroVisual(canvas) {
     ctx.lineWidth = lineWidth * unit;
     ctx.setLineDash(dash.map((d) => d * unit));
     ctx.stroke();
+  }
+
+  /** Stroke the part of an edge revealed so far by the intro. */
+  function edge(e, color, alpha, lineWidth, dash) {
+    const segment = revealSegment(e.reveal, intro, e.a, e.b);
+    if (segment) line(segment[0], segment[1], color, alpha * segment[2], lineWidth, dash);
   }
 
   function fillTriangle(points, color, alpha) {
@@ -109,6 +130,7 @@ export function initHeroVisual(canvas) {
     ctx.clearRect(0, 0, width, height);
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
+    scale = 0.9 + 0.1 * easeOutExpo(intro);
 
     const rotate = (v) => quat.rotate(orientation, v);
     const cubePoints = CUBE_VERTICES.map((v) => project(rotate(v)));
@@ -116,11 +138,12 @@ export function initHeroVisual(canvas) {
 
     // Cube edges are classified by their two adjacent faces: both facing away
     // (hidden), both facing us (inner), or one each (silhouette = the hexagon).
-    const cube = CUBE_EDGES.map(({ a, b, faceNormals }) => {
+    const cube = CUBE_EDGES.map(({ a, b, faceNormals }, i) => {
       const [fa, fb] = faceNormals.map((n) => facing(rotate(n)));
       return {
         a: cubePoints[a],
         b: cubePoints[b],
+        reveal: schedule.cube[i],
         hidden: (1 - fa) * (1 - fb),
         inner: fa * fb,
         silhouette: fa * (1 - fb) + fb * (1 - fa),
@@ -138,11 +161,12 @@ export function initHeroVisual(canvas) {
 
     // A tetra edge is visible when either adjacent face (those opposite the
     // two other vertices) faces the viewer.
-    const tetra = TETRA_EDGES.map(([i, j]) => {
+    const tetra = TETRA_EDGES.map(([i, j], index) => {
       const [k, l] = [0, 1, 2, 3].filter((v) => v !== i && v !== j);
       return {
         a: tetraPoints[i],
         b: tetraPoints[j],
+        reveal: schedule.tetra[index],
         visible: 1 - (1 - faces[k].facing) * (1 - faces[l].facing),
       };
     });
@@ -152,20 +176,22 @@ export function initHeroVisual(canvas) {
       flashes.reduce((sum, f) => sum + f.intensity, 0),
     );
 
+    const fill = smoothstep(0.55, 0.95, intro); // faces fill in at the end of the intro
+
     // Back to front
-    for (const e of cube) line(e.a, e.b, COLOR.hidden, 0.3 * e.hidden, 1, [2, 5]);
+    for (const e of cube) edge(e, COLOR.hidden, 0.3 * e.hidden, 1, [2, 5]);
     for (const f of faces) {
-      fillTriangle(f.points, COLOR.line, 0.035 * (1 - f.facing));
+      fillTriangle(f.points, COLOR.line, fill * 0.035 * (1 - f.facing));
     }
-    for (const e of tetra) line(e.a, e.b, COLOR.line, 0.55 * (1 - e.visible), 1.6);
+    for (const e of tetra) edge(e, COLOR.line, 0.55 * (1 - e.visible), 1.6);
     drawFlashes(rotate);
     for (const f of faces) {
-      fillTriangle(f.points, COLOR.line, f.facing * (0.045 + 0.13 * f.light));
+      fillTriangle(f.points, COLOR.line, fill * f.facing * (0.045 + 0.13 * f.light));
       fillTriangle(f.points, COLOR.glow, f.facing * glow * 0.06);
     }
-    for (const e of tetra) line(e.a, e.b, COLOR.line, 0.95 * e.visible, 2.25);
-    for (const e of cube) line(e.a, e.b, COLOR.hidden, 0.32 * e.inner, 1);
-    for (const e of cube) line(e.a, e.b, COLOR.line, 0.92 * e.silhouette, 2.25);
+    for (const e of tetra) edge(e, COLOR.line, 0.95 * e.visible, 2.25);
+    for (const e of cube) edge(e, COLOR.hidden, 0.32 * e.inner, 1);
+    for (const e of cube) edge(e, COLOR.line, 0.92 * e.silhouette, 2.25);
   }
 
   function drawFlashes(rotate) {
@@ -201,7 +227,20 @@ export function initHeroVisual(canvas) {
     }
   }
 
+  function finishIntro() {
+    intro = 1;
+    phase = { name: 'hold', t: TIMING.hold - TIMING.firstHold };
+  }
+
   function update(dt) {
+    if (phase.name === 'intro') {
+      introClock += dt;
+      intro = Math.min(1, Math.max(0, (introClock - INTRO.delay) / INTRO.duration));
+      orientation = quat.slerp(INTRO_FROM, LOGO_ORIENTATION, easeOutQuart(intro));
+      if (intro >= 1) finishIntro();
+      return;
+    }
+
     inertia = inertia.map((c) => c * Math.exp(-dt / 0.55));
     phase.t += dt;
 
@@ -265,6 +304,7 @@ export function initHeroVisual(canvas) {
       moved: 0,
     };
     inertia = [0, 0, 0];
+    if (phase.name === 'intro') finishIntro(); // grabbing it completes the drawing
     canvas.setPointerCapture(e.pointerId);
   });
 

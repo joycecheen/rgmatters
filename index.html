@@ -4,6 +4,12 @@
     <meta charset="utf-8" />
     <!-- @include head.html -->
     <title>ROENTGEN MATTERS — Home</title>
+    <script>
+      // Hero load-in: hide the hero before first paint; src/scripts/hero-intro.js plays it.
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('has-intro');
+      }
+    </script>
   </head>
   <body>
     <!-- @include header.html {"page":"home"} -->
@@ -12,7 +18,7 @@
       <section class="home-hero">
         <div class="container home-hero__layout">
           <div>
-            <h1 class="display">
+            <h1 class="display home-hero__title" data-intro-title>
               We invent, develop, and provide proprietary hybrid materials for
               <span class="nowrap">next-generation</span> radiation scintillation and detection.
             </h1>

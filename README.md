@@ -88,7 +88,13 @@ templating:
   framed images (`.frame`), pill buttons (`.button--primary | --secondary | --light`).
   The brand teal is reserved for primary actions and section labels.
 - **Motion** is opt-in: add `data-reveal` to an element to fade it in on
-  scroll. Everything respects `prefers-reduced-motion`.
+  scroll. The home hero has its own load-in (`src/scripts/hero-intro.js`, timings
+  in `pages/_home.scss`): the headline rises line by line out of a mask, then
+  the subtitle and buttons follow. Only `transform` and `opacity` animate, and
+  everything respects `prefers-reduced-motion`.
+- **Page edges:** the root background matches the footer, so overscroll and the
+  iOS Safari toolbar area below the page stay seamless. Layout is
+  `viewport-fit=cover`, and containers and the footer pad for safe areas.
 
 ### Colour and contrast
 
@@ -109,6 +115,7 @@ Drag rotates; a mouse click pauses (touch never pauses it). It holds a still vie
 
 - `quaternion.js`: rotation maths
 - `geometry.js`: shape data and the logo orientation
+- `intro.js`: the load-in, where the logo draws itself on like a technical drawing
 - `index.js`: rendering, animation and interaction; tune the constants at the
   top of the file (timing, colours, sizes)
 

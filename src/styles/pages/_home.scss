@@ -67,3 +67,92 @@
     }
   }
 }
+
+// ---------- Load-in (choreography in src/scripts/hero-intro.js) ----------
+// html.has-intro is set by an inline script before first paint, only when
+// motion is allowed. Only transform and opacity animate.
+$intro-ease: cubic-bezier(0.16, 1, 0.3, 1); // expo-out
+$intro-start: 120ms;
+$intro-line-stagger: 90ms;
+$intro-after-title: calc(#{$intro-start} + var(--intro-lines, 5) * #{$intro-line-stagger});
+
+.has-intro {
+  .home-hero__title,
+  .home-hero__subtitle,
+  .home-hero__actions > * {
+    opacity: 0;
+  }
+
+  // Failsafe: if the script never runs, show everything after 3s
+  &:not(.is-playing) {
+    .home-hero__title,
+    .home-hero__subtitle,
+    .home-hero__actions > * {
+      animation: intro-failsafe 0s 3s forwards;
+    }
+  }
+}
+
+.has-intro.is-playing {
+  .home-hero__title {
+    opacity: 1;
+  }
+
+  .home-hero__subtitle,
+  .home-hero__actions > * {
+    animation: intro-fade-up 1000ms $intro-ease both;
+  }
+
+  .home-hero__subtitle {
+    animation-delay: $intro-after-title;
+  }
+
+  .home-hero__actions > :nth-child(1) {
+    animation-delay: calc(#{$intro-after-title} + 110ms);
+  }
+
+  .home-hero__actions > :nth-child(2) {
+    animation-delay: calc(#{$intro-after-title} + 190ms);
+  }
+}
+
+// Each word sits in a mask that clips just below its line; the word rises
+// into view. Words on the same line share a delay, so lines rise together.
+.intro-word {
+  display: inline-block;
+  clip-path: inset(-0.5em -0.5em -0.16em -0.5em);
+}
+
+.intro-word__inner {
+  display: inline-block;
+  animation: intro-rise 1100ms $intro-ease both;
+  animation-delay: calc(#{$intro-start} + var(--line, 0) * #{$intro-line-stagger});
+}
+
+@keyframes intro-rise {
+  from {
+    transform: translateY(110%);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+@keyframes intro-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes intro-failsafe {
+  to {
+    opacity: 1;
+  }
+}
