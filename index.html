@@ -2,14 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#ffffff" />
 <link rel="icon" href="/favicon.ico" sizes="48x48" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <title>ROENTGEN MATTERS — Home</title>
-    <script type="module" crossorigin src="/assets/main-DV0lXaMd.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-CzOJHehk.css">
+    <script>
+      // Hero load-in: hide the hero before first paint; src/scripts/hero-intro.js plays it.
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('has-intro');
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/main-BCjXf8pd.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-BFbfzIHO.css">
   </head>
   <body>
     <header class="site-header" data-header>
@@ -48,7 +54,7 @@
       <section class="home-hero">
         <div class="container home-hero__layout">
           <div>
-            <h1 class="display">
+            <h1 class="display home-hero__title" data-intro-title>
               We invent, develop, and provide proprietary hybrid materials for
               <span class="nowrap">next-generation</span> radiation scintillation and detection.
             </h1>
