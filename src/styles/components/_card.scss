@@ -1,0 +1,32 @@
+// Flat cards: a surface fill, soft corners, no border or shadow.
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: clamp(24px, 1.25rem + 0.8vw, 32px);
+  border-radius: var(--radius-surface);
+  background: var(--color-surface);
+}
+
+.card__icon {
+  margin-bottom: 12px;
+}
+
+.card__text {
+  font-size: var(--text-small);
+  color: var(--color-text-secondary);
+}
+
+.card--inverse {
+  background: var(--color-inverse);
+  color: var(--color-inverse-text);
+
+  .card__text {
+    color: var(--color-inverse-muted);
+  }
+
+  :focus-visible {
+    outline-color: var(--color-inverse-text);
+  }
+}

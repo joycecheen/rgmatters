@@ -1,0 +1,14 @@
+// 404
+
+.not-found {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  max-width: 560px;
+  margin-inline: auto;
+  text-align: center;
+
+  .button {
+    margin-top: 12px;
+  }
+}

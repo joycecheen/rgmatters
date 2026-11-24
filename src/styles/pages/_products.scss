@@ -1,0 +1,110 @@
+// Our Products
+@use '../abstracts' as *;
+
+// ---------- Introduction ----------
+.products-intro {
+  display: grid;
+  gap: 24px var(--gap-wide);
+
+  @include up(md) {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    align-items: start;
+  }
+}
+
+.products-intro__lead {
+  color: var(--color-text);
+}
+
+// ---------- Available Materials Forms ----------
+.forms-head {
+  max-width: none;
+
+  @include up(md) {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    column-gap: var(--gap-wide);
+    align-items: end;
+  }
+}
+
+.forms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap);
+
+  @include up(sm) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @include up(lg) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.forms__item {
+  justify-content: space-between;
+  gap: 40px;
+  min-height: 160px;
+
+  .icon {
+    width: 32px;
+    height: 32px;
+    stroke-width: 1.35;
+  }
+
+  @include down(sm) {
+    min-height: 136px;
+    gap: 28px;
+  }
+}
+
+// ---------- Detection Capabilities ----------
+// An open row of badges (deliberately unlike the tiles above)
+.capabilities {
+  display: grid;
+  gap: 16px;
+
+  @include up(sm) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+.capabilities__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-snug);
+
+  @include up(sm) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.capabilities__badge {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-surface);
+
+  @include up(sm) {
+    width: 80px;
+    height: 80px;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+    stroke-width: 1.4;
+
+    @include up(sm) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

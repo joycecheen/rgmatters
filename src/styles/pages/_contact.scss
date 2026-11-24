@@ -1,0 +1,65 @@
+// Contact Us
+@use '../abstracts' as *;
+
+// Page title beside the email card
+.contact-hero {
+  display: grid;
+  gap: 40px var(--gap-wide);
+
+  @include up(md) {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    align-items: end;
+  }
+}
+
+.contact-email {
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding-block: clamp(28px, 1.5rem + 1.5vw, 40px);
+}
+
+.contact-email__badge {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-bg);
+}
+
+.contact-email__body {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.contact-email__label {
+  color: var(--color-text-muted);
+  font-size: var(--text-label);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+.contact-email__address {
+  color: var(--color-text);
+  font-size: var(--text-heading);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+  overflow-wrap: anywhere;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+  }
+}
+
+@include down(sm) {
+  .contact-email {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

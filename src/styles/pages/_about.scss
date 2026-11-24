@@ -1,0 +1,35 @@
+// About Us
+@use '../abstracts' as *;
+
+.about-hero__title span {
+  @include up(sm) {
+    display: block;
+  }
+}
+
+.about-intro {
+  max-width: 1000px;
+
+  strong {
+    color: var(--color-text);
+  }
+}
+
+.story {
+  display: grid;
+  gap: clamp(64px, 3rem + 4vw, 112px);
+}
+
+.story__media img {
+  aspect-ratio: 16 / 9;
+}
+
+.story__body {
+  display: grid;
+  gap: 16px;
+
+  p {
+    max-width: 34em;
+    color: var(--color-text-secondary);
+  }
+}

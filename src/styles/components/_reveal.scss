@@ -1,0 +1,16 @@
+// Scroll reveal. Classes are applied by src/scripts/reveal.js to [data-reveal]
+// elements that start below the fold.
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 700ms var(--ease-out),
+    transform 700ms var(--ease-out);
+  transition-delay: calc(var(--reveal-order, 0) * 70ms);
+
+  &.is-revealed {
+    opacity: 1;
+    transform: none;
+  }
+}

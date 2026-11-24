@@ -1,0 +1,77 @@
+// Design tokens (CSS custom properties).
+//
+// Every text/ground pairing below is checked for WCAG 2 AA and APCA
+// (see README → "Colour and contrast"). Keep that true when changing them.
+@use '../abstracts' as *;
+
+:root {
+  color-scheme: light;
+
+  // Neutrals
+  --color-bg: #ffffff;
+  --color-surface: #f7f6f6;
+  --color-surface-hover: #efeeed;
+  --color-text: #201f20;
+  --color-text-secondary: #494949;
+  --color-text-muted: #606060;
+  --color-hairline: #e0e0df;
+
+  // Inverse ground (footer, call-to-action card)
+  --color-inverse: #141314;
+  --color-inverse-text: #fcfcfd;
+  --color-inverse-muted: #cfcecf;
+
+  // Brand: the logo teal. Accent jobs: primary actions and section labels.
+  --color-accent: #007ea4; // fills, graphics
+  --color-accent-hover: #006787;
+  --color-accent-text: #006787; // small accent text on light grounds
+  --color-on-accent: #fcfcfd;
+
+  // Type: one family for display and reading
+  --font-sans:
+    'Host Grotesk Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-display: 500;
+
+  --text-display: clamp(2.25rem, 1.97rem + 1.14vw, 3rem); // 36 → 48
+  --text-heading: clamp(1.625rem, 1.49rem + 0.57vw, 2rem); // 26 → 32
+  --text-title: 1.125rem; // 18
+  --text-lead: clamp(1.125rem, 1.08rem + 0.19vw, 1.25rem); // 18 → 20
+  --text-statement: clamp(1.25rem, 1.11rem + 0.57vw, 1.625rem); // 20 → 26
+  --text-body: 1rem; // 16
+  --text-small: 0.9375rem; // 15
+  --text-label: 0.8125rem; // 13
+
+  --leading-display: 1.08;
+  --leading-heading: 1.15;
+  --leading-snug: 1.4;
+  --leading-body: 1.6;
+  --tracking-display: -0.025em;
+  --tracking-heading: -0.02em;
+  --tracking-label: 0.08em;
+
+  // Layout
+  --container: 1200px;
+  --page-margin: 24px;
+  --band-top: clamp(4rem, 3.26rem + 3.05vw, 6rem); // 64 → 96
+  --band-bottom: clamp(3rem, 2.63rem + 1.52vw, 4rem); // 48 → 64
+  --header-height: 72px;
+  --gap: 16px;
+  --gap-wide: clamp(40px, 2rem + 3vw, 96px);
+
+  // Shape
+  --radius-surface: 8px;
+  --radius-frame: 16px;
+  --radius-pill: 9999px;
+  --frame-inset: 8px;
+
+  // Motion
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration: 200ms;
+
+  @include down(md) {
+    --header-height: 64px;
+  }
+}

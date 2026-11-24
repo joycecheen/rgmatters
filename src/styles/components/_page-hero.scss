@@ -1,0 +1,19 @@
+// Opening of the inner pages: label + page title
+
+.page-hero {
+  padding-top: var(--band-top);
+}
+
+.page-hero__inner {
+  display: grid;
+  gap: 20px;
+}
+
+.page-hero__title {
+  max-width: 920px;
+}
+
+// The page title and first section are separated by space alone
+.page-hero + .band {
+  padding-top: clamp(48px, 2.5rem + 2.5vw, 80px);
+}

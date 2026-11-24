@@ -1,0 +1,38 @@
+// Two-column layouts used across pages.
+@use '../abstracts' as *;
+
+// Heading column beside a content column (5 : 7)
+.split {
+  display: grid;
+  gap: 32px var(--gap-wide);
+
+  @include up(md) {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  }
+}
+
+.split__aside {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+
+  @include up(md) {
+    position: sticky;
+    top: calc(var(--header-height) + 32px);
+  }
+}
+
+// Media beside text, optionally reversed (alternating rows)
+.media-row {
+  display: grid;
+  gap: 32px var(--gap-wide);
+  align-items: center;
+
+  @include up(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    &--reverse > :first-child {
+      order: 2;
+    }
+  }
+}

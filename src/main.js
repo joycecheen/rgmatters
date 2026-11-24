@@ -1,14 +1,14 @@
-import '@fontsource-variable/geist';
-import '@fontsource-variable/geist-mono';
+import '@fontsource-variable/host-grotesk';
 import './styles/main.scss';
 
-import { initHeader } from './components/header.js';
-import { initReveal } from './components/reveal.js';
+import { initHeader } from './scripts/header.js';
+import { initReveal } from './scripts/reveal.js';
 
 initHeader();
 initReveal();
 
-const heroCanvas = document.getElementById('hero-visual');
+// The hero visual only exists on the home page; load it on demand.
+const heroCanvas = document.querySelector('[data-hero-visual]');
 if (heroCanvas) {
-  import('./components/hero-visual.js').then(({ initHeroVisual }) => initHeroVisual(heroCanvas));
+  import('./scripts/hero/index.js').then(({ initHeroVisual }) => initHeroVisual(heroCanvas));
 }

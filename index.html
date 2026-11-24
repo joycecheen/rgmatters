@@ -1,33 +1,42 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <!-- @include head.html -->
-  <title>ROENTGEN MATTERS — Home</title>
-</head>
-<body class="page-home">
-  <!-- @include header.html {"page":"home"} -->
+  <head>
+    <meta charset="utf-8" />
+    <!-- @include head.html -->
+    <title>ROENTGEN MATTERS — Home</title>
+  </head>
+  <body>
+    <!-- @include header.html {"page":"home"} -->
 
-  <main id="main">
-    <section class="home-hero">
-      <div class="grid-backdrop" aria-hidden="true"></div>
-      <div class="container home-hero__grid">
-        <div class="home-hero__content">
-          <h1 class="home-hero__title">We invent, develop, and provide proprietary hybrid materials for <span class="nowrap">next-generation</span> radiation scintillation and detection.</h1>
-          <p class="home-hero__subtitle">Advancing security, safety, nuclear medicine, non-destructive testing, imaging, and high energy science.</p>
-          <div class="home-hero__actions">
-            <a href="technology.html" class="btn btn--primary">Our Technology <!-- @icon arrow-right --></a>
-            <a href="products.html" class="btn btn--secondary">Our Products</a>
+    <main id="main">
+      <section class="home-hero">
+        <div class="container home-hero__layout">
+          <div>
+            <h1 class="display">
+              We invent, develop, and provide proprietary hybrid materials for
+              <span class="nowrap">next-generation</span> radiation scintillation and detection.
+            </h1>
+            <p class="lead home-hero__subtitle">
+              Advancing security, safety, nuclear medicine, non-destructive testing, imaging, and high energy
+              science.
+            </p>
+            <div class="home-hero__actions">
+              <a href="/technology.html" class="button button--primary">
+                Our Technology
+                <!-- @icon arrow-right -->
+              </a>
+              <a href="/products.html" class="button button--secondary">Our Products</a>
+            </div>
+          </div>
+
+          <div class="home-hero__stage">
+            <canvas aria-hidden="true" data-hero-visual></canvas>
           </div>
         </div>
-        <div class="home-hero__visual">
-          <canvas id="hero-visual" aria-hidden="true"></canvas>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <!-- @include footer.html -->
-  <script type="module" src="/src/main.js"></script>
-</body>
+    <!-- @include footer.html -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

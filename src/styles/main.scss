@@ -1,11 +1,26 @@
-@use 'tokens';
-@use 'base';
-@use 'layout';
-@use 'components';
-@use 'header';
-@use 'footer';
-@use 'home';
-@use 'technology';
-@use 'products';
-@use 'about';
-@use 'contact';
+// Stylesheet entry. Order: tokens → base → layout → components → pages.
+
+@use 'base/tokens';
+@use 'base/reset';
+@use 'base/typography';
+
+@use 'layout/container';
+@use 'layout/split';
+
+@use 'components/icon';
+@use 'components/button';
+@use 'components/eyebrow';
+@use 'components/card';
+@use 'components/frame';
+@use 'components/reveal';
+@use 'components/site-header';
+@use 'components/site-footer';
+@use 'components/inquiries';
+@use 'components/page-hero';
+
+@use 'pages/home';
+@use 'pages/technology';
+@use 'pages/products';
+@use 'pages/about';
+@use 'pages/contact';
+@use 'pages/not-found';

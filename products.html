@@ -1,74 +1,115 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <!-- @include head.html -->
-  <title>ROENTGEN MATTERS — Our Products</title>
-</head>
-<body class="page-products">
-  <!-- @include header.html {"page":"products"} -->
+  <head>
+    <meta charset="utf-8" />
+    <!-- @include head.html -->
+    <title>ROENTGEN MATTERS — Our Products</title>
+  </head>
+  <body>
+    <!-- @include header.html {"page":"products"} -->
 
-  <main id="main">
-    <!-- Page hero -->
-    <section class="page-hero">
-      <div class="grid-backdrop" aria-hidden="true"></div>
-      <div class="container page-hero__inner">
-        <p class="eyebrow">OUR PRODUCTS</p>
-        <h1 class="page-hero__title">Proprietary Hybrid Materials for Radiation Scintillation and Direct Detection</h1>
-      </div>
-    </section>
-
-    <!-- Intro -->
-    <section class="section">
-      <div class="container product-intro">
-        <div class="product-intro__text">
-          <p>Roentgen Matters offers proprietary, cutting-edge organic-inorganic hybrid material samples, engineered for scalable, and high-performance solutions across various radiation scintillation and direct detection applications.</p>
-          <p>Our materials can detect <strong>X-rays, gamma rays, neutrons, beta rays, muons, and other high-energy particles</strong>, serving critical needs across homeland security, nuclear industry, nuclear medicine, industrial non-destructive testing, medical imaging, and high energy physics sectors etc.</p>
+    <main id="main">
+      <section class="page-hero">
+        <div class="container page-hero__inner">
+          <p class="eyebrow">OUR PRODUCTS</p>
+          <h1 class="display page-hero__title">
+            Proprietary Hybrid Materials for Radiation Scintillation and Direct Detection
+          </h1>
         </div>
-        <figure class="media-frame product-intro__media">
-          <img src="/product.png" alt="Flexible glowing material sheet" width="438" height="370">
-        </figure>
-      </div>
-    </section>
+      </section>
 
-    <!-- Available Materials Forms -->
-    <section class="section section--soft">
-      <div class="container">
-        <header class="section-head section-head--split">
-          <h2>Available Materials Forms</h2>
-          <p class="section-head__sub">Material samples are available in single crystals, powders, glass, amorphous thin films, flexible sheets, inks, and solutions. Our materials can meet a wide range of detector designs and manufacturing needs.</p>
-        </header>
-        <ul class="form-grid">
-          <li class="form-tile"><!-- @icon crystal --><h3>Single Crystals</h3></li>
-          <li class="form-tile"><!-- @icon powder --><h3>Powders</h3></li>
-          <li class="form-tile"><!-- @icon glass --><h3>Glass</h3></li>
-          <li class="form-tile"><!-- @icon layers --><h3>Amorphous Thin Films</h3></li>
-          <li class="form-tile"><!-- @icon flexible-sheet --><h3>Flexible Sheets</h3></li>
-          <li class="form-tile"><!-- @icon droplet --><h3>Inks &amp; Solutions</h3></li>
-        </ul>
-      </div>
-    </section>
+      <!-- Introduction -->
+      <section class="band">
+        <div class="container products-intro">
+          <p class="statement products-intro__lead" data-reveal>
+            Roentgen Matters offers proprietary, cutting-edge organic-inorganic hybrid material samples,
+            engineered for scalable, and high-performance solutions across various radiation scintillation and
+            direct detection applications.
+          </p>
+          <p class="body-secondary" data-reveal>
+            Our materials can detect
+            <strong>X-rays, gamma rays, neutrons, beta rays, muons, and other high-energy particles</strong>,
+            serving critical needs across homeland security, nuclear industry, nuclear medicine, industrial
+            non-destructive testing, medical imaging, and high energy physics sectors etc.
+          </p>
+        </div>
+      </section>
 
-    <!-- Detection Capabilities -->
-    <section class="section">
-      <div class="container">
-        <header class="section-head">
-          <h2>Detection Capabilities</h2>
-        </header>
-        <ul class="capabilities">
-          <li class="capability"><!-- @icon photon --><span>X-rays &amp; Gamma Rays</span></li>
-          <li class="capability"><!-- @icon neutron --><span>Neutrons</span></li>
-          <li class="capability"><!-- @icon beta --><span>Beta Rays</span></li>
-          <li class="capability"><!-- @icon muon --><span>Muons</span></li>
-          <li class="capability"><!-- @icon shower --><span>High-Energy Particles</span></li>
-        </ul>
-      </div>
-    </section>
+      <!-- Available Materials Forms -->
+      <section class="band">
+        <div class="container">
+          <header class="band-head forms-head" data-reveal>
+            <h2 class="heading">Available Materials Forms</h2>
+            <p class="lead">
+              Material samples are available in single crystals, powders, glass, amorphous thin films,
+              flexible sheets, inks, and solutions. Our materials can meet a wide range of detector designs
+              and manufacturing needs.
+            </p>
+          </header>
+          <ul class="forms">
+            <li class="card forms__item" data-reveal>
+              <!-- @icon crystal -->
+              <h3 class="title">Single Crystals</h3>
+            </li>
+            <li class="card forms__item" data-reveal>
+              <!-- @icon powder -->
+              <h3 class="title">Powders</h3>
+            </li>
+            <li class="card forms__item" data-reveal>
+              <!-- @icon glass -->
+              <h3 class="title">Glass</h3>
+            </li>
+            <li class="card forms__item" data-reveal>
+              <!-- @icon layers -->
+              <h3 class="title">Amorphous Thin Films</h3>
+            </li>
+            <li class="card forms__item" data-reveal>
+              <!-- @icon flexible-sheet -->
+              <h3 class="title">Flexible Sheets</h3>
+            </li>
+            <li class="card forms__item" data-reveal>
+              <!-- @icon droplet -->
+              <h3 class="title">Inks &amp; Solutions</h3>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-    <!-- @include inquiries.html {"ctaHref":"contact.html"} -->
-  </main>
+      <!-- Detection Capabilities -->
+      <section class="band">
+        <div class="container">
+          <header class="band-head" data-reveal>
+            <h2 class="heading">Detection Capabilities</h2>
+          </header>
+          <ul class="capabilities">
+            <li class="capabilities__item" data-reveal>
+              <span class="capabilities__badge"><!-- @icon photon --></span>
+              <span>X-rays &amp; Gamma Rays</span>
+            </li>
+            <li class="capabilities__item" data-reveal>
+              <span class="capabilities__badge"><!-- @icon neutron --></span>
+              <span>Neutrons</span>
+            </li>
+            <li class="capabilities__item" data-reveal>
+              <span class="capabilities__badge"><!-- @icon beta --></span>
+              <span>Beta Rays</span>
+            </li>
+            <li class="capabilities__item" data-reveal>
+              <span class="capabilities__badge"><!-- @icon muon --></span>
+              <span>Muons</span>
+            </li>
+            <li class="capabilities__item" data-reveal>
+              <span class="capabilities__badge"><!-- @icon shower --></span>
+              <span>High-Energy Particles</span>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-  <!-- @include footer.html -->
-  <script type="module" src="/src/main.js"></script>
-</body>
+      <!-- @include inquiries.html {"ctaHref":"/contact.html"} -->
+    </main>
+
+    <!-- @include footer.html -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

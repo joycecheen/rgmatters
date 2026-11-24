@@ -1,17 +1,22 @@
-<section class="section section--soft inquiries" id="inquiries">
-  <div class="container inquiries__grid">
-    <div class="inquiries__head split__head">
-      <h2>Inquiries</h2>
-      <p>To purchase, request samples, or discuss your specific needs, please email us at <a href="mailto:info@rgmatters.com">info@rgmatters.com</a> with the following required information:</p>
+<!-- Inquiries. Variable: ctaHref (where the "Contact Us" button points). -->
+<section class="band" id="inquiries">
+  <div class="container split">
+    <div class="split__aside" data-reveal>
+      <h2 class="heading">Inquiries</h2>
+      <p class="lead">
+        To purchase, request samples, or discuss your specific needs, please email us at
+        <a class="text-link" href="mailto:info@rgmatters.com">info@rgmatters.com</a> with the following
+        required information:
+      </p>
     </div>
 
     <div class="inquiries__cards">
-      <div class="inquiry-card">
-        <div class="inquiry-card__header">
-          <span class="icon-tile"><!-- @icon clipboard-list --></span>
-          <h3>Required Information</h3>
+      <div class="card inquiries__card" data-reveal>
+        <div class="inquiries__card-head">
+          <!-- @icon clipboard-list -->
+          <h3 class="title">Required Information</h3>
         </div>
-        <ul class="inquiry-card__list">
+        <ul class="inquiries__list">
           <li>Material requirements</li>
           <li>Preferred material form (liquid, solid, or film)</li>
           <li>Company name</li>
@@ -19,13 +24,16 @@
         </ul>
       </div>
 
-      <div class="inquiry-card inquiry-card--cta">
-        <div class="inquiry-card__header">
-          <span class="icon-tile icon-tile--night"><!-- @icon handshake --></span>
-          <h3>Ready?</h3>
+      <div class="card card--inverse inquiries__card" data-reveal>
+        <div class="inquiries__card-head">
+          <!-- @icon handshake -->
+          <h3 class="title">Ready?</h3>
         </div>
-        <p>Our team is ready to collaborate with you to enable your project successful.</p>
-        <a href="{{ctaHref}}" class="btn btn--light">Contact Us <!-- @icon arrow-right --></a>
+        <p class="card__text">Our team is ready to collaborate with you to enable your project successful.</p>
+        <a href="{{ctaHref}}" class="button button--light">
+          Contact Us
+          <!-- @icon arrow-right -->
+        </a>
       </div>
     </div>
   </div>

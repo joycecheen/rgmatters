@@ -1,0 +1,206 @@
+// Site header and primary navigation
+@use '../abstracts' as *;
+
+$hexagon: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-height);
+  background: rgb(255 255 255 / 0.9);
+  backdrop-filter: saturate(1.5) blur(14px);
+  -webkit-backdrop-filter: saturate(1.5) blur(14px);
+  box-shadow: 0 1px 0 transparent;
+  transition: box-shadow var(--duration) var(--ease-out);
+
+  // A hairline appears only once content scrolls beneath the header
+  &.is-scrolled,
+  &.is-open {
+    box-shadow: 0 1px 0 var(--color-hairline);
+  }
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  height: 100%;
+}
+
+.site-header__logo {
+  flex: none;
+  border-radius: 4px;
+
+  img {
+    width: auto;
+    height: 32px;
+  }
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.site-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.site-nav__link {
+  position: relative;
+  display: block;
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  color: var(--color-text-secondary);
+  font-size: var(--text-small);
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color var(--duration) var(--ease-out);
+
+  &:hover,
+  &[aria-current='page'] {
+    color: var(--color-text);
+  }
+
+  &[aria-current='page']::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 5px;
+    height: 6px;
+    translate: -50% 0;
+    background: var(--color-accent);
+    clip-path: $hexagon;
+  }
+}
+
+.site-header__toggle {
+  display: none;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-surface);
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    height: 1.5px;
+    border-radius: 2px;
+    background: currentColor;
+    transition:
+      transform var(--duration) var(--ease-out),
+      top var(--duration) var(--ease-out);
+
+    &:first-child {
+      top: 17px;
+    }
+
+    &:last-child {
+      top: 25px;
+    }
+  }
+
+  &[aria-expanded='true'] span {
+    top: 21px;
+
+    &:first-child {
+      transform: rotate(45deg);
+    }
+
+    &:last-child {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+// Narrow screens: the navigation becomes a full-height panel under the header
+@include down(md) {
+  .site-header.is-open {
+    background: var(--color-bg);
+  }
+
+  .site-header__logo img {
+    height: 28px;
+  }
+
+  .site-header__toggle {
+    display: block;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+    height: calc(100dvh - var(--header-height));
+    padding: 16px var(--page-margin) 40px;
+    overflow-y: auto;
+    background: var(--color-bg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition:
+      opacity var(--duration) var(--ease-out),
+      transform var(--duration) var(--ease-out),
+      visibility 0s linear var(--duration);
+
+    .is-open & {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      transition:
+        opacity var(--duration) var(--ease-out),
+        transform var(--duration) var(--ease-out);
+    }
+  }
+
+  .site-nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .site-nav__link {
+    padding: 14px 0;
+    border-radius: 0;
+    color: var(--color-text);
+    font-size: 1.5rem;
+    font-weight: var(--weight-medium);
+    letter-spacing: -0.02em;
+
+    &[aria-current='page'] {
+      color: var(--color-accent-text);
+    }
+
+    &[aria-current='page']::after {
+      left: auto;
+      right: 4px;
+      top: 50%;
+      bottom: auto;
+      width: 8px;
+      height: 9px;
+      translate: 0 -50%;
+    }
+  }
+
+  .site-nav__cta {
+    min-height: 52px;
+    font-size: var(--text-body);
+  }
+}

@@ -1,59 +1,75 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <!-- @include head.html -->
-  <title>ROENTGEN MATTERS — About Us</title>
-</head>
-<body class="page-about">
-  <!-- @include header.html {"page":"about"} -->
+  <head>
+    <meta charset="utf-8" />
+    <!-- @include head.html -->
+    <title>ROENTGEN MATTERS — About Us</title>
+  </head>
+  <body>
+    <!-- @include header.html {"page":"about"} -->
 
-  <main id="main">
-    <!-- Page hero -->
-    <section class="page-hero">
-      <div class="grid-backdrop" aria-hidden="true"></div>
-      <div class="container page-hero__inner">
-        <p class="eyebrow">ABOUT US</p>
-        <h1 class="page-hero__title about-hero__title"><span>Built by Experts.</span> <span>Protected by Patents.</span> <span>Driven by Innovation.</span></h1>
-      </div>
-    </section>
+    <main id="main">
+      <section class="page-hero">
+        <div class="container page-hero__inner">
+          <p class="eyebrow">ABOUT US</p>
+          <h1 class="display page-hero__title about-hero__title">
+            <span>Built by Experts.</span> <span>Protected by Patents.</span>
+            <span>Driven by Innovation.</span>
+          </h1>
+        </div>
+      </section>
 
-    <!-- Introduction -->
-    <section class="section">
-      <div class="container">
-        <p class="about-intro"><strong>Roentgen Matters</strong> is a deep-tech startup commercializing novel hybrid materials for next-generation radiation scintillation and detection. Building upon groundbreaking research in organic–inorganic hybrid scintillators and direct detectors, our technology provides a powerful new radiation solution for homeland security, nuclear industry, nuclear medicine, industrial non-destructive testing, medical imaging, and high energy physics applications.</p>
-      </div>
-    </section>
+      <!-- Introduction -->
+      <section class="band">
+        <div class="container">
+          <p class="statement about-intro" data-reveal>
+            <strong>Roentgen Matters</strong> is a deep-tech startup commercializing novel hybrid materials
+            for next-generation radiation scintillation and detection. Building upon groundbreaking research
+            in organic–inorganic hybrid scintillators and direct detectors, our technology provides a powerful
+            new radiation solution for homeland security, nuclear industry, nuclear medicine, industrial
+            non-destructive testing, medical imaging, and high energy physics applications.
+          </p>
+        </div>
+      </section>
 
-    <!-- Vision & Mission -->
-    <section class="section section--flush-top">
-      <div class="container story">
-        <article class="story__row">
-          <figure class="media-frame story__media">
-            <img src="/about1.png" alt="Green swirling pattern" width="576" height="324" loading="lazy">
-          </figure>
-          <div class="story__body">
-            <h2 class="story__kicker">Our Vision</h2>
-            <h3 class="story__title">Innovating Materials for a Safer, Smarter World</h3>
-            <p>Our vision is to provide innovative material solutions for the security/safety, intelligent digital era, advancing the Fourth Industrial Revolution, human health, and scientific discovery.</p>
-          </div>
-        </article>
+      <!-- Vision & Mission -->
+      <section class="band">
+        <div class="container story">
+          <article class="media-row">
+            <figure class="frame story__media" data-reveal>
+              <img src="/images/about-vision.webp" alt="" width="1280" height="699" loading="lazy" />
+            </figure>
+            <div class="story__body" data-reveal>
+              <h2 class="eyebrow">Our Vision</h2>
+              <h3 class="heading">Innovating Materials for a Safer, Smarter World</h3>
+              <p>
+                Our vision is to provide innovative material solutions for the security/safety, intelligent
+                digital era, advancing the Fourth Industrial Revolution, human health, and scientific
+                discovery.
+              </p>
+            </div>
+          </article>
 
-        <article class="story__row story__row--reverse">
-          <figure class="media-frame story__media">
-            <img src="/about2.png" alt="Petri dishes with glowing materials" width="576" height="324" loading="lazy">
-          </figure>
-          <div class="story__body">
-            <h2 class="story__kicker">Our Mission</h2>
-            <h3 class="story__title">Innovating Materials for Radiation Scintillators and Detectors</h3>
-            <p>Our mission is to engineer novel hybrid materials for next-generation radiation scintillators and detectors, delivering high-performance, scalable solutions for homeland security, nuclear industry, nuclear medicine, industrial non-destructive testing, medical imaging, and high energy physics markets.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
+          <article class="media-row media-row--reverse">
+            <figure class="frame story__media" data-reveal>
+              <img src="/images/about-mission.webp" alt="" width="1280" height="699" loading="lazy" />
+            </figure>
+            <div class="story__body" data-reveal>
+              <h2 class="eyebrow">Our Mission</h2>
+              <h3 class="heading">Innovating Materials for Radiation Scintillators and Detectors</h3>
+              <p>
+                Our mission is to engineer novel hybrid materials for next-generation radiation scintillators
+                and detectors, delivering high-performance, scalable solutions for homeland security, nuclear
+                industry, nuclear medicine, industrial non-destructive testing, medical imaging, and high
+                energy physics markets.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
 
-  <!-- @include footer.html -->
-  <script type="module" src="/src/main.js"></script>
-</body>
+    <!-- @include footer.html -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

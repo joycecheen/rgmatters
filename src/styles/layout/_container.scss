@@ -1,0 +1,28 @@
+// Page width and vertical rhythm
+
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + 2 * var(--page-margin));
+  margin-inline: auto;
+  padding-inline: var(--page-margin);
+}
+
+// A band is one section of the page. Spacing is asymmetric (more above).
+.band {
+  padding-top: var(--band-top);
+  padding-bottom: var(--band-bottom);
+}
+
+// Section intro: heading with optional supporting text
+.band-head {
+  display: grid;
+  gap: 16px;
+  max-width: 720px;
+  margin-bottom: clamp(32px, 1.5rem + 2vw, 48px);
+}
+
+.band-head--center {
+  justify-items: center;
+  margin-inline: auto;
+  text-align: center;
+}

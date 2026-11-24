@@ -1,49 +1,37 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <!-- @include head.html -->
-  <title>ROENTGEN MATTERS — Contact Us</title>
-</head>
-<body class="page-contact">
-  <!-- @include header.html {"page":"contact"} -->
+  <head>
+    <meta charset="utf-8" />
+    <!-- @include head.html -->
+    <title>ROENTGEN MATTERS — Contact Us</title>
+  </head>
+  <body>
+    <!-- @include header.html {"page":"contact"} -->
 
-  <main id="main">
-    <!-- Page hero -->
-    <section class="page-hero">
-      <div class="grid-backdrop" aria-hidden="true"></div>
-      <div class="container page-hero__inner">
-        <p class="eyebrow">CONTACT US</p>
-        <h1 class="page-hero__title">Get in touch for purchase, collaboration, investment, or partnerships.</h1>
-      </div>
-    </section>
+    <main id="main">
+      <section class="page-hero">
+        <div class="container contact-hero">
+          <div class="page-hero__inner">
+            <p class="eyebrow">CONTACT US</p>
+            <h1 class="display page-hero__title">
+              Get in touch for purchase, collaboration, investment, or partnerships.
+            </h1>
+          </div>
 
-    <!-- Contact information -->
-    <section class="section">
-      <div class="container contact-cards">
-        <div class="contact-card">
-          <span class="icon-tile"><!-- @icon mail --></span>
-          <p class="contact-card__body">
-            <strong>Email:</strong>
-            <a class="contact-card__value" href="mailto:info@rgmatters.com">info@rgmatters.com</a>
-          </p>
+          <div class="card contact-email">
+            <span class="contact-email__badge"><!-- @icon mail --></span>
+            <p class="contact-email__body">
+              <strong class="contact-email__label">Email:</strong>
+              <a class="contact-email__address" href="mailto:info@rgmatters.com">info@rgmatters.com</a>
+            </p>
+          </div>
         </div>
-        <div class="contact-card">
-          <span class="icon-tile"><!-- @icon map-pin --></span>
-          <p class="contact-card__body">
-            <strong>Mailing Address:</strong>
-            <span class="contact-card__value">Roentgen Matters LLC<br>
-            1729 W. Paul Dirac Drive<br>
-            Tallahassee, FL 32303</span>
-          </p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- @include inquiries.html {"ctaHref":"mailto:info@rgmatters.com"} -->
-  </main>
+      <!-- @include inquiries.html {"ctaHref":"mailto:info@rgmatters.com"} -->
+    </main>
 
-  <!-- @include footer.html -->
-  <script type="module" src="/src/main.js"></script>
-</body>
+    <!-- @include footer.html -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

@@ -1,0 +1,92 @@
+// Type roles. One family; hierarchy comes from size, weight and colour.
+
+h1,
+h2,
+h3 {
+  font-weight: var(--weight-display);
+  text-wrap: balance;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+// Short blocks: balance the lines so a single word never strands on the last
+// one (browsers balance up to ~6 lines; longer text falls back to "pretty").
+.lead,
+.card__text,
+.tradeoff__catch,
+.inquiries__list li {
+  text-wrap: balance;
+}
+
+strong {
+  font-weight: var(--weight-medium);
+  color: var(--color-text);
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+.display {
+  font-size: var(--text-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+}
+
+.heading {
+  font-size: var(--text-heading);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+}
+
+.title {
+  font-size: var(--text-title);
+  line-height: var(--leading-snug);
+  letter-spacing: -0.01em;
+}
+
+.lead {
+  font-size: var(--text-lead);
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.statement {
+  font-size: var(--text-statement);
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+  color: var(--color-text-secondary);
+}
+
+.body-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-link {
+  color: var(--color-accent-text);
+  font-weight: var(--weight-medium);
+  text-decoration-line: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  transition: text-decoration-color var(--duration) var(--ease-out);
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+// Keeps a closing phrase together once the line is wide enough to hold it
+// (avoids a stranded last word in long titles on phones ≥ 390px).
+.keep-together {
+  @media (min-width: 390px) {
+    white-space: nowrap;
+  }
+}

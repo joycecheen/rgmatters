@@ -1,0 +1,99 @@
+// Our Technology
+@use '../abstracts' as *;
+
+// ---------- The Challenge ----------
+.challenge__body {
+  display: grid;
+  gap: 32px;
+}
+
+.tradeoff {
+  display: grid;
+  gap: var(--gap);
+
+  @include up(sm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.tradeoff__point {
+  font-size: var(--text-title);
+  line-height: var(--leading-snug);
+  letter-spacing: -0.01em;
+  color: var(--color-text-secondary);
+}
+
+.tradeoff__catch {
+  display: block;
+  margin-top: 12px;
+  color: var(--color-text-muted);
+  font-size: var(--text-small);
+  line-height: var(--leading-body);
+  letter-spacing: 0;
+}
+
+.challenge__conclusion {
+  color: var(--color-text);
+}
+
+// ---------- Our Solution ----------
+.solution__mark {
+  width: 48px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.solution__layout {
+  display: grid;
+  gap: 40px var(--gap-wide);
+  align-items: center;
+
+  @include up(md) {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  }
+}
+
+.solution__media {
+  width: 100%;
+  max-width: 540px; // never above the illustration's native resolution
+  justify-self: center;
+}
+
+.solution__text {
+  display: grid;
+  gap: 1.1em;
+  color: var(--color-text-secondary);
+
+  p:first-child {
+    font-size: var(--text-lead);
+    line-height: 1.55;
+  }
+}
+
+// ---------- Key Advantages ----------
+.advantages {
+  display: grid;
+  gap: var(--gap);
+
+  @include up(sm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include up(lg) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+// On phones, put the icon beside the title so nine cards stay scannable
+@include down(sm) {
+  .advantages .card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 6px 16px;
+
+    .card__icon {
+      grid-row: span 2;
+      margin-bottom: 0;
+    }
+  }
+}
