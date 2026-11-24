@@ -1,10 +1,10 @@
 // Home hero visual: the logo geometry in 3D.
 //
 // Renders the tetrahedron-in-a-cube from ./geometry.js on a 2D canvas. It
-// opens in the exact logo view, tumbles slowly, periodically settles back into
-// the logo, and emits faint scintillation flashes from inside the crystal.
-// Drag rotates; a click pauses. Honors prefers-reduced-motion (static view) and
-// only animates while on screen.
+// opens in the exact logo view, tumbles continuously, periodically settles back
+// into the logo, and emits faint scintillation flashes from inside the crystal.
+// Drag rotates; a mouse click pauses (touch never pauses it). Honors
+// prefers-reduced-motion (static view) and only animates while on screen.
 import * as quat from './quaternion.js';
 import {
   CUBE_EDGES,
@@ -25,8 +25,8 @@ const COLOR = {
 };
 
 // Seconds
-const TIMING = { firstHold: 1.4, tumble: 8.5, align: 2.6, hold: 3.2, spinUp: 2.2 };
-const SPIN = [0.17, 0.31, 0.05]; // rad/s about view-space axes
+const TIMING = { firstHold: 0.8, tumble: 7, align: 2, hold: 2, spinUp: 1.2 };
+const SPIN = [0.27, 0.5, 0.08]; // rad/s about view-space axes
 const FLASH = { meanInterval: 0.75, rise: 0.05, decay: 0.32, lifetime: 1.6 };
 
 const CAMERA_DISTANCE = 9; // mild perspective
@@ -252,7 +252,7 @@ export function initHeroVisual(canvas) {
     frameId = 0;
   }
 
-  // ---------- Interaction: drag to rotate, click to pause ----------
+  // ---------- Interaction: drag to rotate, mouse click to pause ----------
   let drag = null;
 
   canvas.addEventListener('pointerdown', (e) => {
@@ -285,13 +285,18 @@ export function initHeroVisual(canvas) {
     if (reduceMotion) draw();
   });
 
-  function endDrag() {
+  function endDrag(e) {
     if (!drag) return;
     const { moved, time } = drag;
     drag = null;
     if (moved < 4) {
-      paused = !paused;
-      inertia = [0, 0, 0];
+      // Only a deliberate mouse click pauses. On touch screens a tap, or a page
+      // scroll that starts on the canvas (which ends in pointercancel), must
+      // never stop the animation.
+      if (e.type === 'pointerup' && e.pointerType === 'mouse') {
+        paused = !paused;
+        inertia = [0, 0, 0];
+      }
       return;
     }
     if (reduceMotion || performance.now() - time > 80) inertia = [0, 0, 0];

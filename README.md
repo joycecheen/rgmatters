@@ -104,7 +104,7 @@ is only dark enough for fills and large text.
 `src/scripts/hero/` draws the logo's geometry in 3D on a `<canvas>`: a
 tetrahedron inscribed in a cube which, seen along the cube's diagonal, _is_ the
 logo. It opens in that exact view, tumbles slowly and settles back into it.
-Drag rotates; a click pauses. It holds a still view under
+Drag rotates; a mouse click pauses (touch never pauses it). It holds a still view under
 `prefers-reduced-motion` and stops animating when off screen.
 
 - `quaternion.js`: rotation maths
