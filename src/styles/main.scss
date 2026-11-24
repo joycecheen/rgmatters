@@ -1,11 +1,11 @@
-// Import all SCSS files
-@use 'vars';
-@use 'critical';
+@use 'tokens';
 @use 'base';
-@use 'nav';
+@use 'layout';
 @use 'components';
+@use 'header';
+@use 'footer';
 @use 'home';
-@use 'contact';
 @use 'technology';
 @use 'products';
 @use 'about';
+@use 'contact';

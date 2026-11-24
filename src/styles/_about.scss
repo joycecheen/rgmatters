@@ -1,205 +1,77 @@
-// About Page Specific Styles
-.about-page {
-  main {
-    padding: 220px 0 0px 0;
-  }
+// About Us
 
-  // Ensure consistent main padding across all screen sizes
-  @media (max-width: 1024px) {
-    main {
-      padding: 220px 0 0px 0;
+.about-hero__title span {
+  @media (min-width: 640px) {
+    display: block;
+  }
+}
+
+.about-intro {
+  max-width: 1000px;
+  font-size: clamp(1.25rem, 1rem + 0.95vw, 1.75rem);
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  color: var(--ink-2);
+}
+
+.story {
+  display: grid;
+  gap: clamp(72px, 9vw, 128px);
+}
+
+.story__row {
+  display: grid;
+  gap: clamp(32px, 4vw, 48px);
+  align-items: center;
+
+  @media (min-width: 900px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: clamp(48px, 7vw, 112px);
+
+    &.story__row--reverse .story__media {
+      order: 2;
     }
   }
+}
 
-  @media (max-width: 768px) {
-    main {
-      padding: 220px 0 0px 0;
-    }
+.story__media {
+  aspect-ratio: 16 / 9;
+}
+
+.story__body {
+  display: grid;
+  gap: 20px;
+  align-content: center;
+
+  p {
+    color: var(--muted);
+    max-width: 56ch;
   }
+}
 
-  @media (max-width: 480px) {
-    main {
-      padding: 220px 0 0px 0;
-    }
+.story__kicker {
+  // "Our Vision" / "Our Mission" rendered as a compact label
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  &::before {
+    content: '';
+    width: 9px;
+    height: 10px;
+    background: currentColor;
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
   }
+}
 
-  main .container {
-    margin-top: 100px;
-    padding: 0;
-    margin-right: 115px;
-  }
-
-  .hero-section {
-    text-align: center;
-    margin-bottom: 0px;
-    height: 270px;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    margin-top: 0px;
-    background: #E0E7FF;
-    background: linear-gradient(90deg, rgba(224, 231, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, rgba(0, 126, 164, 0.25) 0%, rgba(255, 255, 255, 1) 100%);
-    z-index: 1;
-    padding-top: 125px;
-  }
-
-  .hero-content {
-    margin-left: 115px;
-    margin-right: 115px;
-    margin-top: 100px;
-    text-align: left;
-    width: 100%;
-  }
-
-  .hero-header {
-    text-align: left;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: #1a1a1a;
-    margin-bottom: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-top: -150px;
-  }
-
-  .hero-title {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 60px;
-    line-height: 1.0;
-    max-width: 80%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    font-family: 'Inter', sans-serif;
-    text-align: left;
-    margin-top: 0px;
-  }
-
-  .highlight {
-    color: #007EA4;
-  }
-
-  // About Us Page Specific Styles
-  .intro-section {
-    margin-bottom: 80px;
-  }
-
-  .intro-text {
-    font-size: 18px;
-    color: #374151;
-    line-height: 1.5;
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    max-width: 1800px;
-  }
-
-  .mission-vision-section {
-    margin-bottom: 80px;
-  }
-
-  .mission-vision-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 60px;
-    align-items: start;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  @media (max-width: 1024px) {
-    .mission-vision-grid {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-
-    .mission-card,
-    .vision-card {
-      text-align: center;
-    }
-  }
-
-  .mission-card,
-  .vision-card {
-    background: transparent;
-    padding: 0;
-  }
-
-  .mission-card h2,
-  .vision-card h2 {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 0.4;
-    color: #333;
-    margin-top: 5px;
-    margin-bottom: 12px;
-    font-family: 'Inter', sans-serif;
-  }
-
-  .mission-card h3,
-  .vision-card h3 {
-    font-size: 22px;
-    font-weight: 500;
-    color: #007EA4;
-    margin-bottom: 28px;
-    font-family: 'Inter', sans-serif;
-  }
-
-  .mission-card p,
-  .vision-card p {
-    color: #374151;
-    line-height: 1.5;
-    font-size: 18px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-  }
-
-  .mission-image,
-  .vision-image {
-    text-align: center;
-    display: flex;
-    align-items: flex-start;
-  }
-
-  .mission-image img,
-  .vision-image img {
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    max-width: 100%;
-    max-height: 300px;
-    height: auto;
-    object-fit: cover;
-  }
-
-  @media (max-width: 1024px) {
-    main .container {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 1400px;
-      padding: 0 32px;
-    }
-
-    .hero-content {
-      margin: 100px 50px 0px 40px;
-      text-align: left;
-      width: 100%;
-    }
-
-    .hero-title {
-      max-width: 95%;
-      font-size: 2.3rem;
-    }
-
-    .vision-image,
-    .mission-image {
-      display: none;
-    }
-  }
-  
+.story__title {
+  font-size: clamp(1.625rem, 1.2rem + 1.4vw, 2.375rem);
+  line-height: 1.12;
+  letter-spacing: -0.028em;
 }

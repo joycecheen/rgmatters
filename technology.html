@@ -2,206 +2,161 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- @include head.html -->
   <title>ROENTGEN MATTERS — Our Technology</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* Critical CSS to prevent FOUC */
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-    body{background:#E0E7FF;background:linear-gradient(90deg,rgba(224,231,255,0.5) 0%,rgba(255,255,255,0) 100%),linear-gradient(180deg,rgba(0,126,164,0.25) 0%,rgba(255,255,255,1) 100%);min-height:100vh;margin:0;padding:0;overflow-x:hidden}
-    .container{margin-left:115px;margin-right:0;padding:24px;max-width:none}
-  </style>
 </head>
-<body class="technology-page">
+<body class="page-technology">
+  <!-- @include header.html {"page":"technology"} -->
 
-
-  <main>
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <div class="hero-header">OUR TECHNOLOGY</div>
-        <h1 class="hero-title">Hybrid Materials: Where Organic <span class="highlight">Scalability and Speed</span> Meet Inorganic <span class="highlight">Performance</span></h1>
+  <main id="main">
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="grid-backdrop" aria-hidden="true"></div>
+      <div class="container page-hero__inner">
+        <p class="eyebrow">OUR TECHNOLOGY</p>
+        <h1 class="page-hero__title">Hybrid Materials: Where Organic <span class="hl">Scalability and Speed</span> Meet Inorganic <span class="hl">Performance</span></h1>
       </div>
     </section>
 
-    <!-- Problem Statement Block -->
-    <div class="problem-container">
-      <div class="problem-tag">
-        <div class="problem-icon">⚠</div>
-        <span>The Challenge</span>
+    <!-- The Challenge -->
+    <section class="section challenge">
+      <div class="container split">
+        <div class="split__head">
+          <p class="tag"><!-- @icon triangle-alert --><span>The Challenge</span></p>
+          <h2 class="challenge__heading">A <span class="nowrap">Decades-Long</span> Dilemma in Materials for Radiation Scintillation and Detection</h2>
+        </div>
+        <div class="challenge__body">
+          <p class="lead">The radiation scintillation and detection industry has long faced a critical trade-off:</p>
+          <ul class="tradeoff">
+            <li class="tradeoff__item">
+              <span class="icon-tile"><!-- @icon benzene --></span>
+              <p><span class="tradeoff__pro"><strong>Organics</strong> are scalable, low-cost, and fast responsive</span> <span class="tradeoff__con">— but lack high sensitivity.</span></p>
+            </li>
+            <li class="tradeoff__item">
+              <span class="icon-tile"><!-- @icon lattice --></span>
+              <p><span class="tradeoff__pro"><strong>Inorganics</strong> are highly sensitive</span> <span class="tradeoff__con">— but brittle, rigid, often hygroscopic, and require costly, high temperature or high vacuum processing.</span></p>
+            </li>
+          </ul>
+          <p class="challenge__conclusion">These limitations create a persistent need for a new class of materials that can combine the essential properties of high sensitivity, fast response, moisture-resistant stability, flexibility, scalability, and affordability to meet modern demands in radiation applications.</p>
+        </div>
       </div>
-      <h2 class="problem-title">A Decades-Long Dilemma in Materials for Radiation Scintillation and Detection</h2>
-      <div class="problem-text-box">
-        <p class="problem-text">
-          The radiation scintillation and detection industry has long faced a critical trade-off:
-        </p>
-        <ul class="challenge-list">
-          <li><strong>Organics</strong> are scalable, low-cost, and fast responsive — but lack high sensitivity.</li>
-          <li><strong>Inorganics</strong> are highly sensitive — but brittle, rigid, often hygroscopic, and require costly, high temperature or high vacuum processing.</li>
+    </section>
+
+    <!-- Our Solution -->
+    <section class="section section--night solution">
+      <div class="container">
+        <header class="section-head section-head--center">
+          <img class="solution__mark" src="/logo-mark.png" alt="RG Matters Logo" width="209" height="234">
+          <h2>Our Solution: Proprietary Hybrid Materials</h2>
+          <p class="section-head__sub">Where Organic <span class="hl">Scalability and Speed</span> Meet Inorganic <span class="hl">Performance</span></p>
+        </header>
+
+        <div class="solution__grid">
+          <figure class="media-frame solution__media">
+            <img src="/tech0.jpg" alt="Photo of 0D-Hybrid Materials" width="900" height="600" loading="lazy">
+          </figure>
+          <div class="solution__text">
+            <p>Our proprietary organic–inorganic hybrid materials are designed to drive the next generation of radiation scintillators and detectors. These advanced hybrid materials uniquely combine the benefits of both organic and inorganic materials, <strong>offering a powerful synergy of properties: high-sensitivity, fast response, moisture-resistant stability (non-hygroscopic), and a flexible, large area form factor. They are also scalable through low-cost synthesis</strong>.</p>
+            <p>This breakthrough technology enables the creation of affordable, flexible, large-area radiation scintillators and detectors with high sensitivity and fast response. Furthermore, our non-toxic, lead-free, and rare-earth-free hybrid are a sustainable material solution fabricated with an energy-saving process, designed to meet increasingly strict environmental regulations.</p>
+            <p>This will spur innovation in critical sectors such as homeland security, nuclear industry, nuclear medicine, industrial non-destructive testing, medical imaging, and high energy physics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Advantages -->
+    <section class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2>Key Advantages</h2>
+        </header>
+        <ul class="feature-grid">
+          <li class="feature">
+            <span class="icon-tile"><!-- @icon radar --></span>
+            <h3>High Sensitivity</h3>
+            <p>Delivers superior radiation scintillation and detection sensitivity.</p>
+          </li>
+          <li class="feature">
+            <span class="icon-tile"><!-- @icon zap --></span>
+            <h3>Fast Response</h3>
+            <p>Offers scintillation decay time down to nanosecond.</p>
+          </li>
+          <li class="feature">
+            <span class="icon-tile"><!-- @icon puzzle --></span>
+            <h3>Integration Friendly</h3>
+            <p>Not hygroscopic or brittle. And emission wavelength matching with peak response of Si detector (compatible with magnetic field).</p>
+          </li>
+          <li class="feature">
+            <span class="icon-tile"><!-- @icon flexible-sheet --></span>
+            <h3>Flexible</h3>
+            <p>Offers flexible sheets or thin films coated on bendable substrates.</p>
+          </li>
+          <li class="feature">
+            <span class="icon-tile"><!-- @icon factory --></span>
+            <h3>Scalable</h3>
+            <p>Simple manufacturing process enables large-scale production of large area sheets and thin films.</p>
+          </li>
+          <li class="feature">
+            <span class="icon-tile"><!-- @icon circle-dollar-sign --></span>
+            <h3>Cost-Effective</h3>
+            <p>Uses a simple, room-temperature synthesis process with earth-abundant materials.</p>
+          </li>
+          <li class="feature">
+            <span class="icon-tile"><!-- @icon leaf --></span>
+            <h3>Eco-Friendly</h3>
+            <p>Non-toxic product free from lead and rare-earth metals, fabricated with energy-saving processing.</p>
+          </li>
+          <li class="feature">
+            <span class="icon-tile"><!-- @icon sliders-horizontal --></span>
+            <h3>Excellent Material Tunability</h3>
+            <p>Emission wavelength (tunable across visible range), band gap tunable (to suppress dark current), and effective Z-value (from tissue-equivalent to middle stop power).</p>
+          </li>
+          <li class="feature">
+            <span class="icon-tile"><!-- @icon shield-check --></span>
+            <h3>Great Stability</h3>
+            <p>Maintained performance after storing in ambient condition for several years.</p>
+          </li>
         </ul>
-        <p class="problem-text">
-          These limitations create a persistent need for a new class of materials that can combine the essential properties of high sensitivity, fast response, moisture-resistant stability, flexibility, scalability, and affordability to meet modern demands in radiation applications.
-        </p>
       </div>
-    </div>
+    </section>
 
-    <!-- Main Content Wrapper -->
-    <div class="main-content-wrapper">
-    <div class="container">
-        <!-- Our Solution Section -->
-        <section class="solution-section">
-          <div class="solution-icon">
-            <img src="/logo.png" alt="RG Matters Logo">
-          </div>
-          <h2 class="solution-title">Our Solution: Proprietary Hybrid Materials</h2>
-          <p class="solution-subtitle">Where Organic <span class="highlight">Scalability and Speed</span> Meet Inorganic <span class="highlight">Performance</span></p>
-          
-          <div class="solution-content">
-            <div class="solution-visual">
-              <div class="solution-image">
-                <img src="/tech0.jpg" alt="Photo of 0D-Hybrid Materials">
-              </div>
-            </div>
-            <div class="problem-text">
-              <p>Our proprietary organic–inorganic hybrid materials are designed to drive the next generation of radiation scintillators and detectors. These advanced hybrid materials uniquely combine the benefits of both organic and inorganic materials, <strong>offering a powerful synergy of properties: high-sensitivity, fast response, moisture-resistant stability
-                (non-hygroscopic), and a flexible, large area form factor. They are also scalable through low-cost synthesis</strong>. 
-              <p>This breakthrough technology enables the creation of affordable, flexible, large-area
-                radiation scintillators and detectors with high sensitivity and fast response. Furthermore,
-                our non-toxic, lead-free, and rare-earth-free hybrid are a sustainable material solution
-                fabricated with an energy-saving process, designed to meet increasingly strict
-                environmental regulations.</p>
-                
-                <p>This will spur innovation in critical sectors such as homeland security, nuclear industry,
-                nuclear medicine, industrial non-destructive testing, medical imaging, and high energy
-                physics.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Features Grid -->
-        <section class="features-section">
-          <h2 class="problem-title">Key Advantages</h2>
-          <div class="features-grid">
-            <div class="feature-card">
-              <div class="feature-icon">
-                <img src="/tech1.png" alt="High Performance">
-              </div>
-              <h3>High Sensitivity</h3>
-              <p>Delivers superior radiation scintillation and detection sensitivity.</p>
-            </div>
-
-            <div class="feature-card">
-              <div class="feature-icon">
-                <img src="/tech9.png" alt="Fast Response">
-              </div>
-              <h3>Fast Response</h3>
-              <p>Offers scintillation decay time down to nanosecond.</p>
-            </div>
-            
-            <div class="feature-card">
-              <div class="feature-icon">
-                <img src="/tech2.png" alt="Easy System Integration">
-              </div>
-              <h3>Integration Friendly</h3>
-              <p>Not hygroscopic or brittle. And emission wavelength matching with peak response of Si detector (compatible with magnetic field).</p>
-            </div>
-            
-            <div class="feature-card">
-              <div class="feature-icon">
-                <img src="/tech3.png" alt="Flexible & Large-Area">
-              </div>
-              <h3>Flexible</h3>
-              <p>Offers flexible sheets or thin films coated on bendable substrates.</p>
-            </div>
-            
-            <div class="feature-card">
-              <div class="feature-icon">
-                <img src="/tech4.png" alt="Scalable">
-              </div>
-              <h3>Scalable</h3>
-              <p>Simple manufacturing process enables large-scale production of large area sheets and thin films.</p>
-            </div>
-            
-            <div class="feature-card">
-              <div class="feature-icon">
-                <img src="/tech5.png" alt="Cost-Effective">
-              </div>
-              <h3>Cost-Effective</h3>
-              <p>Uses a simple, room-temperature synthesis process with earth-abundant materials.</p>
-            </div>
-            
-            <div class="feature-card">
-              <div class="feature-icon">
-                <img src="/tech6.png" alt="Eco-Friendly">
-              </div>
-              <h3>Eco-Friendly</h3>
-              <p>Non-toxic product free from lead and rare-earth metals, fabricated with energy-saving processing.</p>
-            </div>
-            
-            <div class="feature-card">
-              <div class="feature-icon">
-                <img src="/tech7.png" alt="Material Tunability">
-              </div>
-              <h3>Excellent Material Tunability</h3>
-              <p>Emission wavelength (tunable across visible range), band gap tunable (to suppress dark current), and effective Z-value (from tissue-equivalent to middle stop power).</p>
-            </div>
-            
-            <div class="feature-card">
-              <div class="feature-icon">
-                <img src="/tech8.png" alt="Great Stability">
-              </div>
-              <h3>Great Stability</h3>
-              <p>Maintained performance after storing in ambient condition for several years.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Performance Highlights -->
-        <section class="performance-section">
-          <h2 class="problem-title">Performance Highlights</h2>
-          <div class="performance-highlights">
-            <div class="performance-columns">
-              <div class="performance-left-column">
-                <div class="performance-value">5-10×</div>
-                <div class="performance-label">Light Yield</div>
-                
-                <div class="performance-value">20×</div>
-                <div class="performance-label">Response Speed</div>
-                
-                <div class="performance-value">5-100×</div>
-                <div class="performance-label">Direct Detection Sensitivity</div>
-                
-                <div class="performance-value">900×</div>
-                <div class="performance-label">Better Detection Limit</div>
-              </div>
-              
-              <div class="performance-right-column">
-                <div class="performance-title">Excellent Scintillator Light Yield:</div>
-                <div class="performance-description">Outperforming commercial plastic scintillators by a factor of 5 to 10.</div>
-                
-                <div class="performance-title">Great Decay Time:</div>
-                <div class="performance-description">Faster than commercial NaI by a factor of 20. Tunable from nano-second to millisecond.</div>
-                
-                <div class="performance-title">Superior Direct X-ray Detection Sensitivity:</div>
-                <div class="performance-description">Outperforming commercial a-Se by a factor of 5 to 100.</div>
-                
-                <div class="performance-title">Ultra Low Detection Limit</div>
-                <div class="performance-description">Outperforming commercial a-Se by a factor of 900.</div>
-              </div>
-            </div>
-          </div>
-      </section>
+    <!-- Performance Highlights -->
+    <section class="section section--soft">
+      <div class="container">
+        <header class="section-head">
+          <h2>Performance Highlights</h2>
+        </header>
+        <ul class="stats">
+          <li class="stat">
+            <p class="stat__value">5-10<span class="stat__x">×</span></p>
+            <p class="stat__label">Light Yield</p>
+            <h3 class="stat__title">Excellent Scintillator Light Yield:</h3>
+            <p class="stat__desc">Outperforming commercial plastic scintillators by a factor of 5 to 10.</p>
+          </li>
+          <li class="stat">
+            <p class="stat__value">20<span class="stat__x">×</span></p>
+            <p class="stat__label">Response Speed</p>
+            <h3 class="stat__title">Great Decay Time:</h3>
+            <p class="stat__desc">Faster than commercial NaI by a factor of 20. Tunable from nano-second to millisecond.</p>
+          </li>
+          <li class="stat">
+            <p class="stat__value">5-100<span class="stat__x">×</span></p>
+            <p class="stat__label">Direct Detection Sensitivity</p>
+            <h3 class="stat__title">Superior Direct X-ray Detection Sensitivity:</h3>
+            <p class="stat__desc">Outperforming commercial a-Se by a factor of 5 to 100.</p>
+          </li>
+          <li class="stat">
+            <p class="stat__value">900<span class="stat__x">×</span></p>
+            <p class="stat__label">Better Detection Limit</p>
+            <h3 class="stat__title">Ultra Low Detection Limit</h3>
+            <p class="stat__desc">Outperforming commercial a-Se by a factor of 900.</p>
+          </li>
+        </ul>
       </div>
-    </div>
+    </section>
   </main>
 
-
-
+  <!-- @include footer.html -->
   <script type="module" src="/src/main.js"></script>
 </body>
 </html>

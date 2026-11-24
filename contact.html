@@ -2,78 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- @include head.html -->
   <title>ROENTGEN MATTERS — Contact Us</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* Critical CSS to prevent FOUC */
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-    body{background:#ffffff;color:#1a1a1a}
-    .container{margin-left:115px;margin-right:0;padding:24px;max-width:none}
-  </style>
 </head>
-<body>
-  <main>
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <div class="hero-header">CONTACT US</div>
-        <h1 class="hero-title">Get in touch for purchase, collaboration, investment, or partnerships.</h1>
+<body class="page-contact">
+  <!-- @include header.html {"page":"contact"} -->
+
+  <main id="main">
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="grid-backdrop" aria-hidden="true"></div>
+      <div class="container page-hero__inner">
+        <p class="eyebrow">CONTACT US</p>
+        <h1 class="page-hero__title">Get in touch for purchase, collaboration, investment, or partnerships.</h1>
       </div>
     </section>
 
-    <div class="container">
-      <!-- Contact Information Section -->
-      <section class="contact-section">
-        <div class="contact-info">
-          <p><strong>Email:</strong> <a href="mailto:info@rgmatters.com">info@rgmatters.com</a></p>
-          
-          <p><strong>Mailing Address:</strong><br>
-          Roentgen Matters LLC<br>
-          1729 W. Paul Dirac Drive<br>
-          Tallahassee, FL 32303</p>
+    <!-- Contact information -->
+    <section class="section">
+      <div class="container contact-cards">
+        <div class="contact-card">
+          <span class="icon-tile"><!-- @icon mail --></span>
+          <p class="contact-card__body">
+            <strong>Email:</strong>
+            <a class="contact-card__value" href="mailto:info@rgmatters.com">info@rgmatters.com</a>
+          </p>
         </div>
-      </section>
+        <div class="contact-card">
+          <span class="icon-tile"><!-- @icon map-pin --></span>
+          <p class="contact-card__body">
+            <strong>Mailing Address:</strong>
+            <span class="contact-card__value">Roentgen Matters LLC<br>
+            1729 W. Paul Dirac Drive<br>
+            Tallahassee, FL 32303</span>
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <!-- Inquiries Section -->
-      <section class="inquiries-section">
-        <div class="inquiries-container">
-          <h2 class="inquiries-title">Inquiries</h2>
-          <p class="inquiries-intro">To purchase, request samples, or discuss your specific needs, please email us at <a href="mailto:info@rgmatters.com">info@rgmatters.com</a> with the following required information:</p>
-          
-          <div class="inquiries-content">
-            <div class="inquiry-card">
-              <div class="inquiry-header">
-                <img src="/inq1.png" alt="Required Information" class="inquiry-icon">
-                <h3>Required Information</h3>
-              </div>
-              <ul class="inquiry-list">
-                <li>Material requirements</li>
-                <li>Preferred material form (liquid, solid, or film)</li>
-                <li>Company name</li>
-                <li>Contact information</li>
-              </ul>
-            </div>
-            
-            <div class="inquiry-card">
-              <div class="inquiry-header">
-                <img src="/inq2.png" alt="Ready?" class="inquiry-icon">
-                <h3>Ready?</h3>
-              </div>
-              <p class="inquiry-text">Our team is ready to collaborate with you to enable your project successful.</p>
-              <a href="contact.html" class="inquiry-button">Contact Us</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+    <!-- @include inquiries.html {"ctaHref":"mailto:info@rgmatters.com"} -->
   </main>
 
+  <!-- @include footer.html -->
   <script type="module" src="/src/main.js"></script>
 </body>
 </html>
