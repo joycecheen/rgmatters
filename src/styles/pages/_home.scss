@@ -41,18 +41,18 @@
   }
 }
 
-// The 3D mark sits in a framed "stage" with a faint measurement grid
-.home-hero__stage {
+// The 3D mark sits directly on the page: no panel, so the line drawing reads
+// as part of the composition rather than a boxed-in image.
+.home-hero__visual {
   position: relative;
-  overflow: hidden;
+  width: 100%;
+  max-width: 560px;
   aspect-ratio: 1;
-  border-radius: var(--radius-frame);
-  background-color: var(--color-surface);
-  background-image:
-    linear-gradient(to right, rgb(32 31 32 / 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(32 31 32 / 0.05) 1px, transparent 1px);
-  background-size: 48px 48px;
-  background-position: center;
+  justify-self: center;
+
+  @include down(md) {
+    max-width: 420px;
+  }
 
   canvas {
     position: absolute;
