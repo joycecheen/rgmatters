@@ -4,7 +4,9 @@
   width: 100%;
   max-width: calc(var(--container) + 2 * var(--page-margin));
   margin-inline: auto;
-  padding-inline: var(--page-margin);
+  // Clear of the notch in landscape (viewport-fit=cover)
+  padding-right: max(var(--page-margin), env(safe-area-inset-right));
+  padding-left: max(var(--page-margin), env(safe-area-inset-left));
 }
 
 // A band is one section of the page. Spacing is asymmetric (more above).

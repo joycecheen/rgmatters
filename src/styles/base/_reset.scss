@@ -6,12 +6,16 @@
   box-sizing: border-box;
 }
 
+// Page edges. The root (canvas) background is what browsers show past the end
+// of the page: in overscroll "bounce" and, on iOS Safari, behind the toolbar.
+// It matches the footer so the bottom edge is seamless; the body paints the
+// page itself white, and body::before keeps the area above the top white.
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-padding-top: calc(var(--header-height) + 16px);
   scrollbar-color: #c4c3c3 var(--color-bg);
-  background: var(--color-bg);
+  background: var(--color-inverse);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -21,9 +25,11 @@ html {
 }
 
 body {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-height: 100svh; // short pages fill the screen without scrolling
   margin: 0;
   overflow-x: clip;
   background: var(--color-bg);
@@ -35,6 +41,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+// White above the top of the page for top overscroll. It sits outside the
+// document, so it adds no scrollable area.
+body::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  height: 100vh;
+  background: var(--color-bg);
+  pointer-events: none;
 }
 
 main {

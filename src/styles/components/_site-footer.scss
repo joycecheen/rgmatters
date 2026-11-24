@@ -4,7 +4,7 @@
 .site-footer {
   flex: none;
   padding-top: clamp(56px, 2.5rem + 3vw, 80px);
-  padding-bottom: 32px;
+  padding-bottom: calc(32px + env(safe-area-inset-bottom)); // clear of the home indicator
   background: var(--color-inverse);
   color: var(--color-inverse-text);
   font-size: var(--text-small);

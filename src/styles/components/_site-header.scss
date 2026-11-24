@@ -149,7 +149,8 @@ $hexagon: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
     align-items: stretch;
     gap: 32px;
     height: calc(100dvh - var(--header-height));
-    padding: 16px var(--page-margin) 40px;
+    padding: 16px max(var(--page-margin), env(safe-area-inset-right))
+      calc(40px + env(safe-area-inset-bottom)) max(var(--page-margin), env(safe-area-inset-left));
     overflow-y: auto;
     background: var(--color-bg);
     opacity: 0;
